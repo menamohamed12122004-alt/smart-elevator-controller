@@ -1,0 +1,19 @@
+{
+    // Author: Ahmed Ellamie
+    // Email:  ahmed.ellamiee@gmail.com
+    "C_Cpp.default.compilerPath": "avr-gcc",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.intelliSenseEngine": "default",
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c"
+    },
+    "[c]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
+    "makefile.makefilePath": "${workspaceFolder}"
+}
