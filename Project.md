@@ -34,8 +34,8 @@
 
 ## APP (application layer — project-specific business logic and elevator state machine)
 
-| Module | Functions | Why | Name |     |
-|---|---|---|---|
+| Module | Functions | Why | Name | Done |
+|---|---|---|---|---|
 | `elevator_app.c/h` | `Elevator_Init()`, `Elevator_Run()` | Manages the main elevator control loop, floor requests queue, and state transitions (idle, moving, doors open) |Menna Allah |     |
 | `dispatch.c/h` | `Dispatch_UpdateQueue()`, `Dispatch_GetNextFloor()` | Implements the scheduling and dispatch algorithm to route the elevator cabin efficiently based on cabin and floor calls | Asmaa Naguib |      |
 
