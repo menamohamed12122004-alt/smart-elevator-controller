@@ -1,9 +1,4 @@
-# Author: Ahmed Ellamie
-# Email:  ahmed.ellamiee@gmail.com
-#
-# AVR_NTI layered firmware Makefile.
-# Discovers every .c / .h under the project (except build/) and links them.
-# Pipeline: .c -> .i (preprocess) -> .s (assemble listing) -> .o -> .elf -> .hex/.bin
+# --- AVR Project Makefile (Manual Sources & Windows Compatible) ---
 
 MCU      ?= atmega32
 F_CPU    ?= 8000000UL
@@ -19,51 +14,52 @@ SIZE    := avr-size
 CFLAGS  := -mmcu=$(MCU) -DF_CPU=$(F_CPU) -Os -Wall -std=gnu99 -ffunction-sections -fdata-sections
 LDFLAGS := -mmcu=$(MCU) -Wl,--gc-sections -Wl,-Map=$(BUILD_DIR)/$(TARGET).map
 
-# Search the whole project: root + 4 directory levels (LIB/MCAL/HAL/Logic and nested drivers).
-SRCS := $(wildcard *.c)
-SRCS += $(wildcard */*.c)
-SRCS += $(wildcard */*/*.c)
-SRCS += $(wildcard */*/*/*.c)
-SRCS += $(wildcard */*/*/*/*.c)
-SRCS := $(filter-out $(BUILD_DIR)/%,$(SRCS))
+SRCS = main.c \
+       MCAL/GPIO/GPIO.c \
+       MCAL/DIO/dio.c \
+       MCAL/SPI/SPI.c \
+       MCAL/ADC/ADC.c \
+       MCAL/UART/UART.c \
+       MCAL/TIMER/timer.c \
+	   MCAL/INTERRUPT/INTERRUPT.c \
+       MCAL/TIMER/pwm.c
 
-HDRS := $(wildcard *.h)
-HDRS += $(wildcard */*.h)
-HDRS += $(wildcard */*/*.h)
-HDRS += $(wildcard */*/*/*.h)
-HDRS += $(wildcard */*/*/*/*.h)
-HDRS := $(filter-out $(BUILD_DIR)/%,$(HDRS))
+HDRS = LIB/std_types.h \
+       LIB/bit_math.h \
+       MCAL/GPIO/GPIO_interface.h \
+       MCAL/DIO/dio_interface.h \
+       MCAL/SPI/SPI_interface.h \
+       MCAL/ADC/ADC_interface.h \
+       MCAL/UART/UART_interface.h \
+       MCAL/TIMER/timer_interface.h \
+	   MCAL/TIMER/pwm_interface.h
 
-ifeq ($(strip $(SRCS)),)
-$(error No .c files found. Put sources in ., LIB, MCAL, HAL, or Logic.)
-endif
 
-OBJS    := $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRCS))
+OBJS     := $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRCS))
 PREPROCS := $(patsubst %.c,$(BUILD_DIR)/%.i,$(SRCS))
-ASMS    := $(patsubst %.c,$(BUILD_DIR)/%.s,$(SRCS))
+ASMS     := $(patsubst %.c,$(BUILD_DIR)/%.s,$(SRCS))
 
-INC_DIRS := $(sort . LIB MCAL HAL Logic $(dir $(SRCS)) $(dir $(HDRS)))
+INC_DIRS := $(sort . LIB MCAL/GPIO MCAL/DIO MCAL/SPI MCAL/ADC MCAL/UART MCAL/TIMER $(dir $(SRCS)) $(dir $(HDRS)))
 INCLUDES := $(addprefix -I,$(INC_DIRS))
 
-# WinAVR make 3.81 runs recipes in sh, so use POSIX mkdir/rm.
 .PHONY: all clean size verify
 
 all: $(PREPROCS) $(ASMS) $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin size
 
 $(BUILD_DIR)/%.i: %.c
-	mkdir -p $(dir $@)
+	@if not exist "$(dir $@)" mkdir "$(dir $@)"
 	$(CC) $(CFLAGS) $(INCLUDES) -E $< -o $@
 
 $(BUILD_DIR)/%.s: %.c
-	mkdir -p $(dir $@)
+	@if not exist "$(dir $@)" mkdir "$(dir $@)"
 	$(CC) $(CFLAGS) $(INCLUDES) -S $< -o $@
 
 $(BUILD_DIR)/%.o: %.c
-	mkdir -p $(dir $@)
+	@if not exist "$(dir $@)" mkdir "$(dir $@)"
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/$(TARGET).elf: $(OBJS)
-	mkdir -p $(BUILD_DIR)
+	@if not exist "$(BUILD_DIR)" mkdir "$(BUILD_DIR)"
 	$(CC) $(LDFLAGS) $(OBJS) -o $@
 
 $(BUILD_DIR)/$(TARGET).hex: $(BUILD_DIR)/$(TARGET).elf

@@ -10,6 +10,8 @@
 #include "SPI_interface.h"
 #include "SPI_private.h"
 #include "MATH.h"
+#include "GPIO_interface.h"
+
 /* #include "GPIO_interface.h" */  /* use this for SS and the Port-B pin directions */
 
 /*
@@ -20,12 +22,12 @@
  * 4. 8 MHz / 16 = 500 kHz SPI clock with SPI_PRESC_16.///////
  */
 
- uint8 SPI_InitMaster(uint8 Copy_u8Prescaler)
+ STD_ReturnType SPI_InitMaster(uint8 Copy_u8Prescaler)
 {
    
     if (Copy_u8Prescaler > SPI_PRESC_128)
     {
-        Local_u8ErrorStatus = E_NOK;              // 1
+       return E_NOK;              // 1
     }
        else
     {
@@ -48,7 +50,7 @@
  * 1. MISO = output. MOSI, SCK, SS = input.
  * 2. SPCR = SPE only (MSTR = 0). /////
  */
-void SPI_InitSlave(void)
+STD_ReturnType SPI_InitSlave(void)
 {
     // 1
     GPIO_SetPinDirection(GPIO_PORTB, SPI_MISO_PIN, GPIO_OUTPUT);
@@ -57,7 +59,8 @@ void SPI_InitSlave(void)
     GPIO_SetPinDirection(GPIO_PORTB, SPI_SS_PIN,   GPIO_INPUT);
 
     // 2
-    SPCR = (1 << SPE);
+    SPI_SPCR  = (1 << SPE);
+    return E_OK;
 }
 /*
  * SPI_Transceive
@@ -66,7 +69,7 @@ void SPI_InitSlave(void)
  * 3. while (SPIF == 0) ;
  * 4. *Copy_pu8Received = SPDR;    // also clears SPIF
  */
-uint8 SPI_Transceive(uint8 Copy_u8Sent, uint8 *Copy_pu8Received)
+STD_ReturnType SPI_Transceive(uint8 Copy_u8Sent, uint8 *Copy_pu8Received)
 {
    // 1
     if (Copy_pu8Received == NULL)
@@ -77,7 +80,7 @@ uint8 SPI_Transceive(uint8 Copy_u8Sent, uint8 *Copy_pu8Received)
     {
         SPI_SPDR = Copy_u8Sent;
         while (GET_BIT(SPI_SPDR , SPIF) == 0);
-        *Copy_pu8Received = SPDR;
+        *Copy_pu8Received = SPI_SPDR;
     }
 
     return E_OK ;
