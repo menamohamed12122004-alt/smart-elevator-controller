@@ -2,37 +2,34 @@
 #define ADC_INTERFACE_H
 
 /*
- * Author: Ahmed Ellamie
- * Email:  ahmed.ellamiee@gmail.com
- *
- * MCAL ADC — public API for the ATmega32 10-bit ADC (channels ADC0..ADC7).
- * Include this header from HAL, Logic, and main. Do not include ADC_private.h there.
+ * Author: Menna Allah (Elevator Controller Project PRJ-08-ELEVATOR)
+ * MCAL ADC — Public API for ATmega32 10-bit ADC
  */
 
 #include "STD_TYPES.h"
 
-/* ---------------- Voltage reference (ADMUX REFS1:0) ---------------- */
+/* ---------------- Voltage Reference (ADMUX REFS1:0) ---------------- */
 #define ADC_REF_AREF          0u    /* AREF pin, internal Vref off */
-#define ADC_REF_AVCC          1u    /* AVCC with cap on AREF      */
-#define ADC_REF_INTERNAL_2V56 3u    /* Internal 2.56 V            */
+#define ADC_REF_AVCC          1u    /* AVCC with cap on AREF pin   */
+#define ADC_REF_INTERNAL_2V56 3u    /* Internal 2.56 V             */
 
-/* ---------------- Result adjust (ADMUX ADLAR) ---------------- */
-#define ADC_RIGHT_ADJUST      0u    /* 10-bit value in ADC = ADCL | (ADCH << 8) */
+/* ---------------- Result Adjust (ADMUX ADLAR) ---------------- */
+#define ADC_RIGHT_ADJUST      0u    /* 10-bit value right adjusted */
 #define ADC_LEFT_ADJUST       1u
 
-/* ---------------- Prescaler (ADCSRA ADPS2:0) — F_ADC = F_CPU / N ---------------- */
+/* ---------------- Prescaler (ADCSRA ADPS2:0) ---------------- */
 #define ADC_PRESC_2           1u
 #define ADC_PRESC_4           2u
 #define ADC_PRESC_8           3u
 #define ADC_PRESC_16          4u
 #define ADC_PRESC_32          5u
 #define ADC_PRESC_64          6u
-#define ADC_PRESC_128         7u
+#define ADC_PRESC_128         7u    /* Recommended for 8MHz (62.5kHz ADC clock) */
 
-/* ---------------- Single-ended channels (ADMUX MUX4:0) ---------------- */
-#define ADC_CHANNEL_0         0u
-#define ADC_CHANNEL_1         1u
-#define ADC_CHANNEL_2         2u
+/* ---------------- Dedicated Elevator Project Channels ---------------- */
+#define ADC_CHANNEL_0         0u    /* PA0: Shaft Floor Position Feedback Potentiometer */
+#define ADC_CHANNEL_1         1u    /* PA1: Passenger Weight Load Cell Strain-Gauge    */
+#define ADC_CHANNEL_2         2u    /* PA2: Door Opening Span Feedback Potentiometer   */
 #define ADC_CHANNEL_3         3u
 #define ADC_CHANNEL_4         4u
 #define ADC_CHANNEL_5         5u
@@ -40,31 +37,27 @@
 #define ADC_CHANNEL_7         7u
 
 /*
- * Description : Enable the ADC, pick the reference and the prescaler.
- *               Typical kit: ADC_REF_AVCC and ADC_PRESC_64 at 8 MHz (~125 kHz).
+ * Description : Enables ADC, sets reference voltage (AVCC) and prescaler (128).
  */
 STD_ReturnType ADC_Init(uint8 Copy_u8Ref, uint8 Copy_u8Prescaler);
 
 /*
- * Description : Select the channel (0..7), start one conversion, wait for ADIF,
- *               then write the 10-bit result to *Copy_pu16Reading (0..1023).
+ * Description : Synchronous read for a selected channel (0..7). Returns 10-bit value (0..1023).
  */
 STD_ReturnType ADC_ReadChannel(uint8 Copy_u8Channel, uint16 *Copy_pu16Reading);
 
 /*
- * Description : Start a conversion on a channel already selected; do not wait.
+ * Description : Starts a conversion on a channel without blocking.
  */
 STD_ReturnType ADC_StartConversion(uint8 Copy_u8Channel);
 
 /*
- * Description : Return E_OK and the last 10-bit result if ADIF is set.
- *               Return E_NOK if the conversion is still running.
+ * Description : Returns E_OK and reading if conversion is complete; E_NOK if still running.
  */
 STD_ReturnType ADC_GetResult(uint16 *Copy_pu16Reading);
 
 /*
- * Description : Enable or disable the ADC complete interrupt (ADIE).
- *               Copy_u8State: 1 = enable, 0 = disable. Call sei() from INTERRUPT.
+ * Description : Enable/Disable ADC Interrupt (ADIE).
  */
 STD_ReturnType ADC_SetInterrupt(uint8 Copy_u8State);
 

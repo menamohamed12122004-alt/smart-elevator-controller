@@ -11,11 +11,15 @@
 | Field | Value |
 |-------|-------|
 | **Project code** | `PRJ-08-ELEVATOR` |
-| **Team size** | 3 students (recommended) |
-| **Team names**|Mariam Salah hamadto hagag Menna Muhammed Ibrahim Eman Elsayed Ali Ahmed Asmaa Salama |
+| **Team size** | 4 students (recommended) |
+| **Team names**|
+ Mariam Salah hamadto hagag 
+ Menna Muhammed Ibrahim 
+ Eman Elsayed Ali Ahmed
+ Asmaa Salama |
 
-| **Build window** | Days 13 – 15 (sep 13 – sep 17, 2026) |
-| **Demo & submission** | July 30, 2026 |
+| **Build window** | Days 13 – 15 (Sep 13 – Sep 17, 2026) |
+| **Demo & submission** |Sep 30, 2026 |
 | **Dominant skill** | LOOK dispatch algorithm, three-device SPI bus, motion profiling |
 | **MCU** | ATmega32A @ 8 MHz |
 | **Simulator** | SimulIDE 1.x |
