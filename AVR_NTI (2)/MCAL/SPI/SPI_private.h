@@ -5,8 +5,7 @@
  * Author: Eman Elsayed Ali
  * Email:  eman.elsayed.ali9@gmail.com
  *
- * STUDENT TASK — SPI private layer (ATmega32)
- * Include this file ONLY from SPI.c.
+
  *
  * What you must add here:
  * 1. Registers:
