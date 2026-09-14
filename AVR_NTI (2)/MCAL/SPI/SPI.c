@@ -1,6 +1,6 @@
 /*
- * Author: Ahmed Ellamie
- * Email:  ahmed.ellamiee@gmail.com
+ * Author: Eman Elsayed Ali
+ * Email:  eman.elsayed.ali9@gmail.com
  *
  * STUDENT TASK — SPI.c  (ATmega32, mode 0)
  * Implement every prototype from SPI_interface.h.
