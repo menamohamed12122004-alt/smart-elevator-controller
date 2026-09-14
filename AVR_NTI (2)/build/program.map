@@ -1,9 +1,16 @@
 Archive member included to satisfy reference by file (symbol)
 
+<<<<<<< HEAD
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodsi4.o)
                               build/MCAL/UART/UART.o (__udivmodsi4)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
                               C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o (exit)
+=======
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o (exit)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+                              build/HAL/SevenSegment/SevenSegment.o (__do_copy_data)
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
                               build/MCAL/INTERRUPT/INTERRUPT.o (__do_clear_bss)
 
@@ -14,6 +21,39 @@ Discarded input sections
  .text          0x00000000        0x0 build/main.o
  .data          0x00000000        0x0 build/main.o
  .bss           0x00000000        0x0 build/main.o
+<<<<<<< HEAD
+=======
+ .text          0x00000000        0x0 build/HAL/KeyPad/KeyPad.o
+ .data          0x00000000        0x0 build/HAL/KeyPad/KeyPad.o
+ .bss           0x00000000        0x0 build/HAL/KeyPad/KeyPad.o
+ .text.KeyPad_Init
+                0x00000000       0x18 build/HAL/KeyPad/KeyPad.o
+ .text.KeyPad_GetPressedKey
+                0x00000000       0xf2 build/HAL/KeyPad/KeyPad.o
+ .text          0x00000000        0x0 build/HAL/SevenSegment/SevenSegment.o
+ .data          0x00000000        0x0 build/HAL/SevenSegment/SevenSegment.o
+ .bss           0x00000000        0x0 build/HAL/SevenSegment/SevenSegment.o
+ .text.SevenSegment_Display
+                0x00000000       0x20 build/HAL/SevenSegment/SevenSegment.o
+ .text.SevenSegment_Init
+                0x00000000       0x18 build/HAL/SevenSegment/SevenSegment.o
+ .rodata.segmentPatterns.1228
+                0x00000000        0xa build/HAL/SevenSegment/SevenSegment.o
+ .text          0x00000000        0x0 build/MCAL/ADC/ADC.o
+ .data          0x00000000        0x0 build/MCAL/ADC/ADC.o
+ .bss           0x00000000        0x0 build/MCAL/ADC/ADC.o
+ .text.ADC_Init
+                0x00000000       0x2a build/MCAL/ADC/ADC.o
+ .text.ADC_ReadChannel
+                0x00000000       0x34 build/MCAL/ADC/ADC.o
+ .text.ADC_StartConversion
+                0x00000000       0x1e build/MCAL/ADC/ADC.o
+ .text.ADC_GetResult
+                0x00000000       0x20 build/MCAL/ADC/ADC.o
+ .text.ADC_SetInterrupt
+                0x00000000       0x18 build/MCAL/ADC/ADC.o
+ .comment       0x00000000       0x13 build/MCAL/ADC/ADC.o
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  .text          0x00000000        0x0 build/MCAL/GPIO/GPIO.o
  .data          0x00000000        0x0 build/MCAL/GPIO/GPIO.o
  .bss           0x00000000        0x0 build/MCAL/GPIO/GPIO.o
@@ -37,6 +77,7 @@ Discarded input sections
  .text.Elevator_ReadFloorButton
                 0x00000000       0x1a build/MCAL/GPIO/dio.o
  .comment       0x00000000       0x13 build/MCAL/GPIO/dio.o
+<<<<<<< HEAD
  .text          0x00000000        0x0 build/MCAL/SPI/SPI.o
  .data          0x00000000        0x0 build/MCAL/SPI/SPI.o
  .bss           0x00000000        0x0 build/MCAL/SPI/SPI.o
@@ -74,6 +115,11 @@ Discarded input sections
                 0x00000000        0x2 build/MCAL/TIMER/timer.o
  .text.TIMER1_Stop
                 0x00000000        0x2 build/MCAL/TIMER/timer.o
+=======
+ .text          0x00000000        0x0 build/MCAL/I2C/I2C.o
+ .data          0x00000000        0x0 build/MCAL/I2C/I2C.o
+ .bss           0x00000000        0x0 build/MCAL/I2C/I2C.o
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  .text          0x00000000        0x0 build/MCAL/INTERRUPT/INTERRUPT.o
  .data          0x00000000        0x0 build/MCAL/INTERRUPT/INTERRUPT.o
  .bss           0x00000000        0x0 build/MCAL/INTERRUPT/INTERRUPT.o
@@ -81,6 +127,7 @@ Discarded input sections
                 0x00000000        0x8 build/MCAL/INTERRUPT/INTERRUPT.o
  .text.EXTI_Disable
                 0x00000000       0x32 build/MCAL/INTERRUPT/INTERRUPT.o
+<<<<<<< HEAD
  .text          0x00000000        0x0 build/MCAL/TIMER/pwm.o
  .data          0x00000000        0x0 build/MCAL/TIMER/pwm.o
  .bss           0x00000000        0x0 build/MCAL/TIMER/pwm.o
@@ -109,6 +156,38 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x20 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodsi4.o)
  .debug_str     0x00000000       0x68 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodsi4.o)
+=======
+ .text          0x00000000        0x0 build/MCAL/SPI/SPI.o
+ .data          0x00000000        0x0 build/MCAL/SPI/SPI.o
+ .bss           0x00000000        0x0 build/MCAL/SPI/SPI.o
+ .text.SPI_InitMaster
+                0x00000000       0x4a build/MCAL/SPI/SPI.o
+ .text.SPI_InitSlave
+                0x00000000       0x32 build/MCAL/SPI/SPI.o
+ .text.SPI_Transceive
+                0x00000000       0x1e build/MCAL/SPI/SPI.o
+ .comment       0x00000000       0x13 build/MCAL/SPI/SPI.o
+ .text          0x00000000        0x0 build/MCAL/TIMER/TIMER.o
+ .data          0x00000000        0x0 build/MCAL/TIMER/TIMER.o
+ .bss           0x00000000        0x0 build/MCAL/TIMER/TIMER.o
+ .text.TIMER0_DelayS
+                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+ .text.TIMER0_PWM
+                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+ .text.TIMER0_Stop
+                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+ .text.TIMER1_Init
+                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+ .text.TIMER1_DelayMS
+                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+ .text.TIMER1_PWM
+                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+ .text.TIMER1_Stop
+                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+ .text          0x00000000        0x0 build/MCAL/UART/UART.o
+ .data          0x00000000        0x0 build/MCAL/UART/UART.o
+ .bss           0x00000000        0x0 build/MCAL/UART/UART.o
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
@@ -125,6 +204,25 @@ Discarded input sections
                 0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fixed
                 0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
+<<<<<<< HEAD
+=======
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
  .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
  .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
@@ -160,12 +258,20 @@ LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
 LOAD build/main.o
 LOAD build/MCAL/GPIO/GPIO.o
 LOAD build/MCAL/GPIO/dio.o
+<<<<<<< HEAD
+=======
+LOAD build/MCAL/I2C/I2C.o
+LOAD build/MCAL/INTERRUPT/INTERRUPT.o
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
 LOAD build/MCAL/SPI/SPI.o
 LOAD build/MCAL/ADC/ADC.o
 LOAD build/MCAL/UART/UART.o
+<<<<<<< HEAD
 LOAD build/MCAL/TIMER/timer.o
 LOAD build/MCAL/INTERRUPT/INTERRUPT.o
 LOAD build/MCAL/TIMER/pwm.o
+=======
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
 START GROUP
 LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a
 LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a
@@ -312,8 +418,15 @@ END GROUP
  *(.init3)
  *(.init3)
  *(.init4)
+<<<<<<< HEAD
  .init4         0x00000060       0x10 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
                 0x00000060                __do_clear_bss
+=======
+ .init4         0x00000060       0x16 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+                0x00000060                __do_copy_data
+ .init4         0x00000076       0x10 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000076                __do_clear_bss
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  *(.init4)
  *(.init5)
  *(.init5)
@@ -324,6 +437,7 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
+<<<<<<< HEAD
  .init9         0x00000070        0x8 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
  *(.init9)
  *(.text)
@@ -347,6 +461,31 @@ END GROUP
                 0x00000078                __vector_18
                 0x00000078                __vector_20
                 0x0000007c                        . = ALIGN (0x2)
+=======
+ .init9         0x00000086        0x8 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
+ *(.init9)
+ *(.text)
+ .text          0x0000008e        0x4 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
+                0x0000008e                __vector_12
+                0x0000008e                __bad_interrupt
+                0x0000008e                __vector_6
+                0x0000008e                __vector_11
+                0x0000008e                __vector_13
+                0x0000008e                __vector_17
+                0x0000008e                __vector_19
+                0x0000008e                __vector_7
+                0x0000008e                __vector_5
+                0x0000008e                __vector_4
+                0x0000008e                __vector_9
+                0x0000008e                __vector_15
+                0x0000008e                __vector_8
+                0x0000008e                __vector_14
+                0x0000008e                __vector_10
+                0x0000008e                __vector_16
+                0x0000008e                __vector_18
+                0x0000008e                __vector_20
+                0x00000092                        . = ALIGN (0x2)
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  *(.text.*)
  .text.INT0_Handler
                 0x0000007c        0xa build/main.o
@@ -363,6 +502,7 @@ END GROUP
                 0x0000030a       0x10 build/MCAL/TIMER/timer.o
                 0x0000030a                TIMER0_Init
  .text.TIMER0_DelayMS
+<<<<<<< HEAD
                 0x0000031a       0x36 build/MCAL/TIMER/timer.o
                 0x0000031a                TIMER0_DelayMS
  .text.INTERRUPT_EnableGlobal
@@ -394,6 +534,15 @@ END GROUP
  .fini9         0x0000054e        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
                 0x0000054e                _exit
                 0x0000054e                exit
+=======
+                0x0000052e       0x36 build/MCAL/TIMER/TIMER.o
+                0x0000052e                TIMER0_DelayMS
+                0x00000564                        . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000564        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
+                0x00000564                _exit
+                0x00000564                exit
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -412,12 +561,17 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
+<<<<<<< HEAD
  .fini0         0x0000054e        0x4 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
+=======
+ .fini0         0x00000564        0x4 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  *(.fini0)
  *(.hightext)
  *(.hightext*)
  *(.progmemx)
  *(.progmemx.*)
+<<<<<<< HEAD
                 0x00000552                        . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
@@ -425,6 +579,15 @@ END GROUP
 
 .data           0x00800060        0x0 load address 0x00000552
                 [!provide]                        PROVIDE (__data_start = .)
+=======
+                0x00000568                        . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+                0x00000568                        _etext = .
+
+.data           0x00800060        0x0 load address 0x00000568
+                0x00800060                        PROVIDE (__data_start = .)
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  *(.data)
  *(.data*)
  *(.gnu.linkonce.d*)
@@ -433,7 +596,11 @@ END GROUP
  *(.gnu.linkonce.r*)
                 0x00800060                        . = ALIGN (0x2)
                 0x00800060                        _edata = .
+<<<<<<< HEAD
                 [!provide]                        PROVIDE (__data_end = .)
+=======
+                0x00800060                        PROVIDE (__data_end = .)
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
 
 .bss            0x00800060        0x6
                 0x00800060                        PROVIDE (__bss_start = .)
@@ -442,8 +609,13 @@ END GROUP
  .bss.callback  0x00800060        0x6 build/MCAL/INTERRUPT/INTERRUPT.o
  *(COMMON)
                 0x00800066                        PROVIDE (__bss_end = .)
+<<<<<<< HEAD
                 0x00000552                        __data_load_start = LOADADDR (.data)
                 0x00000552                        __data_load_end = (__data_load_start + SIZEOF (.data))
+=======
+                0x00000568                        __data_load_start = LOADADDR (.data)
+                0x00000568                        __data_load_end = (__data_load_start + SIZEOF (.data))
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
 
 .noinit         0x00800066        0x0
                 [!provide]                        PROVIDE (__noinit_start = .)
@@ -514,16 +686,27 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
+<<<<<<< HEAD
 .debug_aranges  0x00000000       0x40
+=======
+.debug_aranges  0x00000000       0x60
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
  .debug_aranges
+<<<<<<< HEAD
                 0x00000020       0x20 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
+=======
+                0x00000020       0x20 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .debug_aranges
+                0x00000040       0x20 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
 
 .debug_pubnames
  *(.debug_pubnames)
 
+<<<<<<< HEAD
 .debug_info     0x00000000      0x52e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
@@ -541,6 +724,28 @@ END GROUP
  .debug_line    0x00000000       0x1d C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
  .debug_line    0x0000001d       0x51 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
  .debug_line    0x0000006e       0x75 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
+=======
+.debug_info     0x00000000      0x552
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x4e6 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
+ .debug_info    0x000004e6       0x24 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
+ .debug_info    0x0000050a       0x24 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .debug_info    0x0000052e       0x24 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
+
+.debug_abbrev   0x00000000      0x4df
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x4a3 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
+ .debug_abbrev  0x000004a3       0x14 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
+ .debug_abbrev  0x000004b7       0x14 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .debug_abbrev  0x000004cb       0x14 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
+
+.debug_line     0x00000000      0x16a
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x00000000       0x1d C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
+ .debug_line    0x0000001d       0x51 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
+ .debug_line    0x0000006e       0x87 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+ .debug_line    0x000000f5       0x75 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
 
 .debug_frame
  *(.debug_frame)
@@ -549,6 +754,11 @@ END GROUP
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
  .debug_str     0x00000196       0x68 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
+<<<<<<< HEAD
+=======
+ .debug_str     0x000001fe        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+                                 0x68 (size before relaxing)
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
  .debug_str     0x000001fe        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
                                  0x68 (size before relaxing)
 
@@ -585,6 +795,12 @@ END GROUP
  .debug_line_str
                 0x00000000       0x5c C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
  .debug_line_str
+<<<<<<< HEAD
+=======
+                0x0000005c        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
+                                 0x5c (size before relaxing)
+ .debug_line_str
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
                 0x0000005c        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
                                  0x5c (size before relaxing)
 

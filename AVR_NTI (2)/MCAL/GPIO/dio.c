@@ -1,6 +1,10 @@
 #include "STD_TYPES.h"
 #include "GPIO_interface.h"
 #include "dio_interface.h"
+<<<<<<< HEAD
+=======
+#include "GPIO_private.h"
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
 
 
 STD_ReturnType Elevator_InitButtons(void)

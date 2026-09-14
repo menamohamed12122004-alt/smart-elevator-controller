@@ -60,6 +60,10 @@ STD_ReturnType SPI_InitSlave(void)
 
     // 2
     SPI_SPCR  = (1 << SPE);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
     return E_OK;
 }
 /*
@@ -79,7 +83,7 @@ STD_ReturnType SPI_Transceive(uint8 Copy_u8Sent, uint8 *Copy_pu8Received)
     else
     {
         SPI_SPDR = Copy_u8Sent;
-        while (GET_BIT(SPI_SPDR , SPIF) == 0);
+        while (GET_BIT(SPI_SPSR, SPIF) == 0);
         *Copy_pu8Received = SPI_SPDR;
     }
 

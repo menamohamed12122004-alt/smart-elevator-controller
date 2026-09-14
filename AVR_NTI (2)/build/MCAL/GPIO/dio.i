@@ -61,6 +61,11 @@ STD_ReturnType Elevator_InitButtons(void);
 STD_ReturnType Elevator_ReadCarButton(uint8 Copy_u8Floor, uint8 *Copy_pu8State);
 STD_ReturnType Elevator_ReadFloorButton(uint8 Copy_u8Floor, uint8 *Copy_pu8State);
 # 4 "MCAL/GPIO/dio.c" 2
+<<<<<<< HEAD
+=======
+# 1 "MCAL/GPIO/GPIO_private.h" 1
+# 5 "MCAL/GPIO/dio.c" 2
+>>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
 
 
 STD_ReturnType Elevator_InitButtons(void)

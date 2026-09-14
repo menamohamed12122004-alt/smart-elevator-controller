@@ -56,7 +56,7 @@
 #define SPIE    7u
 #define SPE     6u
 #define DORD    5u
-#define MSTR    4u
+#define MSTR    5u
 #define CPOL    3u
 #define CPHA    2u
 #define SPR1    1u
