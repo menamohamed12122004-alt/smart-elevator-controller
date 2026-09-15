@@ -5,19 +5,27 @@
 
 void PWM_Init(void)
 {
-    SET_BIT(TCCR0, WGM00);
-    SET_BIT(TCCR0, WGM01);
+    SET_BIT(TCCR1A, WGM11);
+    CLEAR_BIT(TCCR1A, WGM10);
+    SET_BIT(TCCR1B, WGM13);
+    SET_BIT(TCCR1B, WGM12);
     
-    CLEAR_BIT(TCCR0, COM00);
-    SET_BIT(TCCR0, COM01);
+    CLEAR_BIT(TCCR1A, COM1A0);
+    SET_BIT(TCCR1A, COM1A1);
     
-    SET_BIT(TCCR0, CS01);
-    SET_BIT(TCCR0, CS00);
+    ICR1 = 799;
+    
+    SET_BIT(TCCR1B, CS10);
+    CLEAR_BIT(TCCR1B, CS11);
+    CLEAR_BIT(TCCR1B, CS12);
 }
 
 void PWM_SetDutyCycle(uint8 Copy_u8Channel, uint8 Copy_u8DutyCycle)
 {
-    uint8 Local_u8CompareValue = (uint8)(((uint16)Copy_u8DutyCycle * 255) / 100);
+    uint16 Local_u16CompareValue = (uint16)(((uint32)Copy_u8DutyCycle * 799) / 100);
     
-    OCR0 = Local_u8CompareValue;
+    if (Copy_u8Channel == 0)
+    {
+        OCR1A = Local_u16CompareValue;
+    }
 }
