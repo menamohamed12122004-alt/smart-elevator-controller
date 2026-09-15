@@ -2,16 +2,29 @@
 #define HC595_INTERFACE_H
 
 #include "STD_TYPES.h"
+#include "GPIO_interface.h"
 
+/* تحديد طرف الـ Latch وطرفي أسهم الاتجاهات */
+#define HC595_LATCH_PORT     GPIO_PORTC
+#define HC595_LATCH_PIN      GPIO_PIN3
+#define HC595_DIR_UP_PIN     GPIO_PIN4
+#define HC595_DIR_DN_PIN     GPIO_PIN5
 
-#define HC595_LATCH_PORT    DIO_PORTC   // أو PORTC حسب درايفر الـ GPIO عندك
-#define HC595_LATCH_PIN     DIO_PIN3    // أو PIN3
+typedef enum
+{
+	HC595_DIR_NONE = 0,
+	HC595_DIR_UP,
+	HC595_DIR_DOWN
+} HC595_Direction_t;
 
 // الدوال الأساسية
 STD_ReturnType HC595_Init(void);
-STD_ReturnType HC595_SendByte(uint8_t Copy_u8Data);
+STD_ReturnType HC595_SendByte(uint8 Copy_u8Data);
 
-// دالة إضافية لعرض رقم الدور مباشرة على الـ 7-Segment
-STD_ReturnType HC595_DisplayFloor(uint8_t Copy_u8FloorNum);
+// لعرض رقم الدور مباشرة على الـ 7-Segment
+STD_ReturnType HC595_DisplayFloor(uint8 Copy_u8FloorNum, HC595_Direction_t Copy_tDirection);
 
-#endif 
+// لعرض الرموز الخاصة مثل 'E' للأعطال و 'F' للحريق
+STD_ReturnType HC595_DisplaySpecial(char Copy_cSymbol);
+
+#endif /* HC595_INTERFACE_H */
