@@ -1,0 +1,8 @@
+#ifndef HOIST_PRIVATE_H_
+#define HOIST_PRIVATE_H_
+
+#define MOTOR_PORT      GPIO_PORTB
+#define MOTOR_PIN_IN1   GPIO_PIN0
+#define MOTOR_PIN_IN2   GPIO_PIN1
+
+#endif /* HOIST_PRIVATE_H_ */
