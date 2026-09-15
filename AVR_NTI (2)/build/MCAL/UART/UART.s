@@ -66,4 +66,29 @@ UART_SendByte:
 /* epilogue start */
 	ret
 	.size	UART_SendByte, .-UART_SendByte
+	.section	.text.UART_ReceiveByte,"ax",@progbits
+.global	UART_ReceiveByte
+	.type	UART_ReceiveByte, @function
+UART_ReceiveByte:
+/* prologue: function */
+/* frame size = 0 */
+/* stack size = 0 */
+.L__stack_usage = 0
+	sbiw r24,0
+	breq .L11
+.L10:
+	sbis 0xb,7
+	rjmp .L10
+	in r18,0xc
+	movw r30,r24
+	st Z,r18
+	ldi r24,0
+	ldi r25,0
+	ret
+.L11:
+	ldi r24,lo8(1)
+	ldi r25,0
+/* epilogue start */
+	ret
+	.size	UART_ReceiveByte, .-UART_ReceiveByte
 	.ident	"GCC: (GNU) 15.2.0"
