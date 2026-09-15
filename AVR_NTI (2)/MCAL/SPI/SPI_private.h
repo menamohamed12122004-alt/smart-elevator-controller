@@ -2,11 +2,10 @@
 #define SPI_PRIVATE_H
 
 /*
- * Author: Ahmed Ellamie
- * Email:  ahmed.ellamiee@gmail.com
+ * Author: Eman Elsayed Ali
+ * Email:  eman.elsayed.ali9@gmail.com
  *
- * STUDENT TASK — SPI private layer (ATmega32)
- * Include this file ONLY from SPI.c.
+
  *
  * What you must add here:
  * 1. Registers:
@@ -46,9 +45,6 @@
 
 #define SPI_SPDR    (*(volatile uint8*)0x2F)    // data
 
-#define SPCR    (*(volatile uint8 *)0x2D)
-#define SPSR    (*(volatile uint8 *)0x2E)
-#define SPDR    (*(volatile uint8 *)0x2F)
 
 
 //........................Bit names [SPCR] ....................//

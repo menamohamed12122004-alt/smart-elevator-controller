@@ -1,7 +1,7 @@
 #include "STD_TYPES.h"
 #include "GPIO_interface.h"
 #include "dio_interface.h"
-#include "dio_private.h"
+#include "GPIO_private.h"
 
 
 STD_ReturnType Elevator_InitButtons(void)

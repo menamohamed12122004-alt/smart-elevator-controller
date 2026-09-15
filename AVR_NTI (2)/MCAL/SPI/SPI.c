@@ -1,9 +1,6 @@
 /*
- * Author: Ahmed Ellamie
- * Email:  ahmed.ellamiee@gmail.com
- *
- * STUDENT TASK — SPI.c  (ATmega32, mode 0)
- * Implement every prototype from SPI_interface.h.
+ * Author: Eman Elsayed Ali
+ * Email:  eman.elsayed.ali9@gmail.com
  */
 
 #include "STD_TYPES.h"
@@ -59,7 +56,8 @@ STD_ReturnType SPI_InitSlave(void)
     GPIO_SetPinDirection(GPIO_PORTB, SPI_SS_PIN,   GPIO_INPUT);
 
     // 2
-    SPI_SPCR  = (1 << SPE);
+    SPI_SPCR = (1 << SPE); 
+
     return E_OK;
 }
 /*
@@ -79,17 +77,40 @@ STD_ReturnType SPI_Transceive(uint8 Copy_u8Sent, uint8 *Copy_pu8Received)
     else
     {
         SPI_SPDR = Copy_u8Sent;
-        while (GET_BIT(SPI_SPDR , SPIF) == 0);
+        while (GET_BIT(SPI_SPSR, SPIF) == 0);
         *Copy_pu8Received = SPI_SPDR;
     }
 
     return E_OK ;
 }
+
+
 /*
  * SPI_SelectSlave
  * 1. GPIO_SetPinDirection(port, pin, GPIO_OUTPUT);
  * 2. GPIO_SetPinValue(port, pin, GPIO_LOW);
  *
  * SPI_ReleaseSlave
- * 1. GPIO_SetPinValue(port, pin, GPIO_HIGH);
+ * 1. GPIO_SetPinValue(port, pin, GPIO_HIGH);STD_ReturnType SPI_SelectSlave(uint8 Copy_u8Port, uint8 Copy_u8Pin)
  */
+STD_ReturnType SPI_SelectSlave(uint8 Copy_u8Port, uint8 Copy_u8Pin)
+{
+    return E_OK;
+
+    GPIO_SetPinDirection(Copy_u8Port, Copy_u8Pin, GPIO_OUTPUT);
+    GPIO_SetPinValue(Copy_u8Port, Copy_u8Pin, GPIO_LOW);
+
+    return E_NOK;
+}
+
+
+STD_ReturnType  SPI_ReleaseSlave(uint8 Copy_u8Port, uint8 Copy_u8Pin)
+{
+   return E_OK;
+
+    GPIO_SetPinValue(Copy_u8Port, Copy_u8Pin, GPIO_HIGH);
+
+    return E_NOK;
+}
+
+
