@@ -1,5 +1,7 @@
+#include <stdint.h>
 #include "STD_TYPES.h"
 #include "74HC595_interface.h"
+#include <avr/io.h>
 // استدعاء ملف الـ Interface الخاص بدرايفر الـ SPI (حسب التسمية عندك في المشروع)
 #include "SPI_interface.h" 
 
@@ -31,7 +33,7 @@ STD_ReturnType HC595_Init(void) {
     
     // 3. تهيئة وحدة الـ SPI من طبقة الـ MCAL
     // (تأكد من اسم دالة التهيئة عندك في الـ SPI driver، مثلاً SPI_voidInit)
-    SPI_Init(); 
+    SPI_InitSlave(); 
     
     return E_OK;
 }
@@ -41,7 +43,7 @@ STD_ReturnType HC595_SendByte(uint8_t Copy_u8Data) {
     HC595_PORT_REG &= ~(1 << HC595_PIN_NUM);
     
     // 2. إرسال البايت عبر هاردوير الـ SPI بسرعة عالية
-    SPI_Transmit(Copy_u8Data);
+    SPI_Transceive(Copy_u8Data , 0);
     
     // 3. رفع طرف الـ Latch لنقل البيانات إلى الأطراف الخرجية دفعة واحدة
     HC595_PORT_REG |= (1 << HC595_PIN_NUM);
