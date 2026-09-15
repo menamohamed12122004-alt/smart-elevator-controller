@@ -57,10 +57,7 @@ STD_ReturnType SPI_InitSlave(void)
 
     // 2
     SPI_SPCR  = (1 << SPE);
-<<<<<<< HEAD
-=======
 
->>>>>>> 0e6b039 (Update AVR project to use GCC 15.2.0 and optimize memory layout)
     return E_OK;
 }
 /*

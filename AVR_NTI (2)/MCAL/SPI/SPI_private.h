@@ -45,9 +45,6 @@
 
 #define SPI_SPDR    (*(volatile uint8*)0x2F)    // data
 
-#define SPCR    (*(volatile uint8 *)0x2D)
-#define SPSR    (*(volatile uint8 *)0x2E)
-#define SPDR    (*(volatile uint8 *)0x2F)
 
 
 //........................Bit names [SPCR] ....................//
@@ -55,7 +52,7 @@
 #define SPIE    7u
 #define SPE     6u
 #define DORD    5u
-#define MSTR    5u
+#define MSTR    4u
 #define CPOL    3u
 #define CPHA    2u
 #define SPR1    1u
