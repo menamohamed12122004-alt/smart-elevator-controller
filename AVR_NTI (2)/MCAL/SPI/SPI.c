@@ -56,7 +56,7 @@ STD_ReturnType SPI_InitSlave(void)
     GPIO_SetPinDirection(GPIO_PORTB, SPI_SS_PIN,   GPIO_INPUT);
 
     // 2
-    SPI_SPCR  = (1 << SPE);
+    SPI_SPCR = (1 << SPE); 
 
     return E_OK;
 }
@@ -91,7 +91,26 @@ STD_ReturnType SPI_Transceive(uint8 Copy_u8Sent, uint8 *Copy_pu8Received)
  * 2. GPIO_SetPinValue(port, pin, GPIO_LOW);
  *
  * SPI_ReleaseSlave
- * 1. GPIO_SetPinValue(port, pin, GPIO_HIGH);
+ * 1. GPIO_SetPinValue(port, pin, GPIO_HIGH);STD_ReturnType SPI_SelectSlave(uint8 Copy_u8Port, uint8 Copy_u8Pin)
  */
+STD_ReturnType SPI_SelectSlave(uint8 Copy_u8Port, uint8 Copy_u8Pin)
+{
+    return E_OK;
+
+    GPIO_SetPinDirection(Copy_u8Port, Copy_u8Pin, GPIO_OUTPUT);
+    GPIO_SetPinValue(Copy_u8Port, Copy_u8Pin, GPIO_LOW);
+
+    return E_NOK;
+}
+
+
+STD_ReturnType  SPI_ReleaseSlave(uint8 Copy_u8Port, uint8 Copy_u8Pin)
+{
+   return E_OK;
+
+    GPIO_SetPinValue(Copy_u8Port, Copy_u8Pin, GPIO_HIGH);
+
+    return E_NOK;
+}
 
 
