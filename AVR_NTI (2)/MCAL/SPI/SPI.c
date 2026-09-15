@@ -83,6 +83,8 @@ STD_ReturnType SPI_Transceive(uint8 Copy_u8Sent, uint8 *Copy_pu8Received)
 
     return E_OK ;
 }
+
+
 /*
  * SPI_SelectSlave
  * 1. GPIO_SetPinDirection(port, pin, GPIO_OUTPUT);
@@ -91,3 +93,5 @@ STD_ReturnType SPI_Transceive(uint8 Copy_u8Sent, uint8 *Copy_pu8Received)
  * SPI_ReleaseSlave
  * 1. GPIO_SetPinValue(port, pin, GPIO_HIGH);
  */
+
+

@@ -3,10 +3,21 @@
 
 #include "STD_TYPES.h"
 
-#define HC165_NUM_CHIPS      2u  
+#define HC165_NUM_CHIPS       2u      // 2 chips x 8 bits = 16 inputs        */
+ 
+   
+#define HC165_PL_PORT         GPIO_PORTC
+#define HC165_PL_PIN          2u      /* PC2 - the pin TC-09 scopes          */
+ 
+#define HC165_MIRROR_ON_PB4   1u      /* 1 = pulse PB4 with PC2, 0 = PC2 only */
 #define HC165_SHLD_PORT       GPIO_PORTB
 #define HC165_SHLD_PIN        4u
-
+               
+#define HC165_ACTIVE_LOW     0u
+ 
+/* Scan runs at 20 Hz (50 ms). Two agreeing samples = 50 ms of stability,
+ * so 20 ms of chatter is rejected (TC-13).                                 */
+#define HC165_DEBOUNCE_SAMPLES 2u
 /* ---------------- Button bit map ------ */
 #define BTN_CAR_CALL_G        0u
 #define BTN_CAR_CALL_1        1u
