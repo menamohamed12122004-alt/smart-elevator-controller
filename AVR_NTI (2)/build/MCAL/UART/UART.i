@@ -1,6 +1,6 @@
-# 1 "MCAL/UART/UART.c"
-# 1 "<built-in>"
-# 1 "<command-line>"
+# 0 "MCAL/UART/UART.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
 # 1 "MCAL/UART/UART.c"
 # 9 "MCAL/UART/UART.c"
 # 1 "LIB/STD_TYPES.h" 1
@@ -55,4 +55,52 @@ STD_ReturnType UART_SetRxInterrupt(uint8 Copy_u8State);
 STD_ReturnType UART_SetTxInterrupt(uint8 Copy_u8State);
 # 11 "MCAL/UART/UART.c" 2
 # 1 "MCAL/UART/UART_private.h" 1
+# 21 "MCAL/UART/UART_private.h"
+ * 2. Bit names you will poll:
+ * UDRE = 5 in UCSRA (transmitter ready)
+ * RXC = 7 in UCSRA (byte received)
+ * RXEN = 4, TXEN = 3 in UCSRB
+ *
+ * 3. 8N1 in UCSRC (must set URSEL = 1 when writing UCSRC):
+ * URSEL=1, UMSEL=0 (async), UPM=00 (no parity), USBS=0 (1 stop),
+ * UCSZ1:0 = 11 (8-bit). UCSZ2 in UCSRB stays 0.
+ *
+ * 4. Baud helper:
+ * ubrr = (8000000UL / (16UL * baud)) - 1
+ * write UBRRH (URSEL=0) then UBRRL.
+ *
+ * 5. This project uses 8000000UL 8000000UL unless you override it.
+ */
 # 12 "MCAL/UART/UART.c" 2
+# 21 "MCAL/UART/UART.c"
+STD_ReturnType UART_Init(uint32 Copy_u32BaudRate) {
+    uint16 local_u16Ubr = 0;
+
+    if (Copy_u32BaudRate == 0U) {
+        return E_NOK;
+    }
+
+    local_u16Ubr = (uint16)(((8000000UL / (16UL * Copy_u32BaudRate)) - 1UL));
+
+    (*(volatile unsigned char*)0x40) = (uint8)(local_u16Ubr >> 8);
+    (*(volatile unsigned char*)0x29) = (uint8)(local_u16Ubr & 0xFFU);
+
+    (*(volatile unsigned char*)0x40) = (uint8)((1U << URSEL) | (1U << UCSZ1) | (1U << UCSZ0));
+    (*(volatile unsigned char*)0x2A) = (uint8)((1U << 4) | (1U << 3) | (1U << RXCIE));
+
+    return E_OK;
+}
+
+
+
+
+   STD_ReturnType UART_SendByte(uint8 Copy_u8Data)
+{
+    while (((*(volatile unsigned char*)0x2B) & (1 << 5)) == 0)
+    {
+    }
+
+    (*(volatile unsigned char*)0x2C) = Copy_u8Data;
+
+    return E_OK;
+}

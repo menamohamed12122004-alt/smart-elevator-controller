@@ -16,7 +16,7 @@ LDFLAGS := -mmcu=$(MCU) -Wl,--gc-sections -Wl,-Map=$(BUILD_DIR)/$(TARGET).map
 
 SRCS = main.c \
        MCAL/GPIO/GPIO.c \
-       MCAL/DIO/dio.c \
+       MCAL/GPIO/dio.c \
        MCAL/SPI/SPI.c \
        MCAL/ADC/ADC.c \
        MCAL/UART/UART.c \
@@ -27,7 +27,7 @@ SRCS = main.c \
 HDRS = LIB/std_types.h \
        LIB/bit_math.h \
        MCAL/GPIO/GPIO_interface.h \
-       MCAL/DIO/dio_interface.h \
+       MCAL/GPIO/dio_interface.h \
        MCAL/SPI/SPI_interface.h \
        MCAL/ADC/ADC_interface.h \
        MCAL/UART/UART_interface.h \
