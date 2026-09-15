@@ -11,8 +11,8 @@
 |---|---|---|---|---|
 | `dio.c/h` | `DIO_Init(port,pin,dir)`, `DIO_Write`, `DIO_Read` | Controls motor direction pins for cabin up/down movement and door opening/closing | Asmaa Naguib |  done  |
 | `pwm.c/h` | `PWM_Init()`, `PWM_SetDutyCycle(channel, duty)` | Manages elevator motor speed profiles for smooth acceleration, cruising, and deceleration | Asmaa Naguib|  done  |
-| `adc.c/h` | `ADC_Init`, `ADC_Read(channel)` | Reads analog floor position indicators and the Load Cell sensor for passenger weight monitoring  | Menna Allah |     |
-| `exti.c/h` | `EXTI_Init()`, minimal ISR stubs for safety/emergency | Handles emergency stop and door safety mechanisms with strict, low-latency interrupt handling | Menna Allah |     |
+| `adc.c/h` | `ADC_Init`, `ADC_Read(channel)` | Reads analog floor position indicators and the Load Cell sensor for passenger weight monitoring  | Menna Allah | done   |
+| `exti.c/h` | `EXTI_Init()`, minimal ISR stubs for safety/emergency | Handles emergency stop and door safety mechanisms with strict, low-latency interrupt handling | Menna Allah | done  |
 | `spi.c/h` (74HC165) | `SPI_Init`, `SPI_Transfer(byte)` | Reads cabin and floor call buttons using parallel-in/serial-out shift registers | Eman |    |
 | `spi.c/h` (74HC595) | `SPI_Init`, `SPI_Transfer(byte)` | Drives floor number 7-segment displays using serial-in/parallel-out shift registers | Maryam Salah |  done   | 
 | `usart.c/h` | `USART_Init`, `USART_SendByte/String`, RX/TX | Transmits real-time status and telemetry reports to the building-management console | Maryam Salah |  done   |
@@ -28,7 +28,7 @@
 | `door_ctrl.c/h` | `Door_Open()`, `Door_Close()`, `Door_CheckSafety()` | Manages cabin door automation and emergency safety mechanisms via EXTI | Asmaa Naguib |     |
 | `sensor_mgr.c/h` | `Sensor_GetFloorPosition()`, `Sensor_GetWeight()` | Evaluates analog floor indicators and Load Cell weight limits using the ADC driver | Iman |    |
 | `display.c/h` | `Display_SetFloor(floorNum)` | Drives the floor number 7-segment displays using the 74HC595 shift register | Iman |    |
-| `comm_mgr.c/h` | `Comm_SendTelemetry(msg)`, `Comm_ReceiveCommand()` | Handles real-time communication and reports with the building-management console via USART | Menna Allah |      |
+| `comm_mgr.c/h` | `Comm_SendTelemetry(msg)`, `Comm_ReceiveCommand()` | Handles real-time communication and reports with the building-management console via USART | Menna Allah |  done   |
 
 ---
 
