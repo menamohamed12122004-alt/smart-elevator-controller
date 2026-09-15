@@ -13,7 +13,7 @@
 | `pwm.c/h` | `PWM_Init()`, `PWM_SetDutyCycle(channel, duty)` | Manages elevator motor speed profiles for smooth acceleration, cruising, and deceleration | Asmaa Naguib|  done  |
 | `adc.c/h` | `ADC_Init`, `ADC_Read(channel)` | Reads analog floor position indicators and the Load Cell sensor for passenger weight monitoring  | Menna Allah | done   |
 | `exti.c/h` | `EXTI_Init()`, minimal ISR stubs for safety/emergency | Handles emergency stop and door safety mechanisms with strict, low-latency interrupt handling | Menna Allah | done  |
-| `spi.c/h` (74HC165) | `SPI_Init`, `SPI_Transfer(byte)` | Reads cabin and floor call buttons using parallel-in/serial-out shift registers | Eman |    |
+| `spi.c/h` (74HC165) | `SPI_Init`, `SPI_Transfer(byte)` | Reads cabin and floor call buttons using parallel-in/serial-out shift registers | Eman | done |
 | `spi.c/h` (74HC595) | `SPI_Init`, `SPI_Transfer(byte)` | Drives floor number 7-segment displays using serial-in/parallel-out shift registers | Maryam Salah |  done   | 
 | `usart.c/h` | `USART_Init`, `USART_SendByte/String`, RX/TX | Transmits real-time status and telemetry reports to the building-management console | Maryam Salah |  done   |
 
