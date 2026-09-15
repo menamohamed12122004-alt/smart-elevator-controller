@@ -9,8 +9,8 @@
 ## MCAL (register-level — only layer allowed to touch hardware, NFR-08): "how do I even talk to this chip"
 | Driver | Functions | Why | Name | Done |
 |---|---|---|---|---|
-| `dio.c/h` | `DIO_Init(port,pin,dir)`, `DIO_Write`, `DIO_Read` | Controls motor direction pins for cabin up/down movement and door opening/closing | Asmaa Naguib |    |
-| `pwm.c/h` | `PWM_Init()`, `PWM_SetDutyCycle(channel, duty)` | Manages elevator motor speed profiles for smooth acceleration, cruising, and deceleration | Asmaa Naguib|    |
+| `dio.c/h` | `DIO_Init(port,pin,dir)`, `DIO_Write`, `DIO_Read` | Controls motor direction pins for cabin up/down movement and door opening/closing | Asmaa Naguib |  done  |
+| `pwm.c/h` | `PWM_Init()`, `PWM_SetDutyCycle(channel, duty)` | Manages elevator motor speed profiles for smooth acceleration, cruising, and deceleration | Asmaa Naguib|  done  |
 | `adc.c/h` | `ADC_Init`, `ADC_Read(channel)` | Reads analog floor position indicators and the Load Cell sensor for passenger weight monitoring  | Menna Allah |     |
 | `exti.c/h` | `EXTI_Init()`, minimal ISR stubs for safety/emergency | Handles emergency stop and door safety mechanisms with strict, low-latency interrupt handling | Menna Allah |     |
 | `spi.c/h` (74HC165) | `SPI_Init`, `SPI_Transfer(byte)` | Reads cabin and floor call buttons using parallel-in/serial-out shift registers | Eman |    |
