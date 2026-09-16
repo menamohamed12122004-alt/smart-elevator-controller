@@ -2,12 +2,14 @@ Archive member included to satisfy reference by file (symbol)
 
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
                               build/MCAL/TIMER/pwm.o (__umulhisi3)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+                              build/APP/COMM/comm_mgr.o (__udivmodhi4)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodsi4.o)
                               build/MCAL/TIMER/pwm.o (__udivmodsi4)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
                               C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o (exit)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
-                              build/HAL/74HC595/74HC595.o (__do_copy_data)
+                              build/APP/COMM/comm_mgr.o (__do_copy_data)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
                               build/MCAL/INTERRUPT/INTERRUPT.o (__do_clear_bss)
 
@@ -18,9 +20,31 @@ Discarded input sections
  .text          0x00000000        0x0 build/main.o
  .data          0x00000000        0x0 build/main.o
  .bss           0x00000000        0x0 build/main.o
+ .text          0x00000000        0x0 build/APP/COMM/comm_mgr.o
+ .data          0x00000000        0x0 build/APP/COMM/comm_mgr.o
+ .bss           0x00000000        0x0 build/APP/COMM/comm_mgr.o
+ .text.Comm_SendNum
+                0x00000000       0x90 build/APP/COMM/comm_mgr.o
+ .text.Comm_Init
+                0x00000000        0xc build/APP/COMM/comm_mgr.o
+ .rodata.Comm_SendTelemetry.str1.1
+                0x00000000       0x1b build/APP/COMM/comm_mgr.o
+ .text.Comm_SendTelemetry
+                0x00000000       0x5c build/APP/COMM/comm_mgr.o
+ .text.Comm_ReceiveCommand
+                0x00000000       0x4a build/APP/COMM/comm_mgr.o
+ .comment       0x00000000       0x13 build/APP/COMM/comm_mgr.o
  .text          0x00000000        0x0 build/HAL/74HC165/HC165.o
  .data          0x00000000        0x0 build/HAL/74HC165/HC165.o
  .bss           0x00000000        0x0 build/HAL/74HC165/HC165.o
+ .text.HC165_Init
+                0x00000000       0x1a build/HAL/74HC165/HC165.o
+ .text.HC165_ReadByte
+                0x00000000       0x34 build/HAL/74HC165/HC165.o
+ .text.HC165_ReadMultiple
+                0x00000000       0x54 build/HAL/74HC165/HC165.o
+ .text.HC165_Read16Bits
+                0x00000000       0x44 build/HAL/74HC165/HC165.o
  .comment       0x00000000       0x13 build/HAL/74HC165/HC165.o
  .text          0x00000000        0x0 build/HAL/74HC595/74HC595.o
  .data          0x00000000        0x0 build/HAL/74HC595/74HC595.o
@@ -41,6 +65,20 @@ Discarded input sections
  .text.Elevator_ReadFloorButton
                 0x00000000       0x1a build/HAL/DIO/dio.o
  .comment       0x00000000       0x13 build/HAL/DIO/dio.o
+ .text          0x00000000        0x0 build/HAL/hoist/hoist.o
+ .data          0x00000000        0x0 build/HAL/hoist/hoist.o
+ .bss           0x00000000        0x0 build/HAL/hoist/hoist.o
+ .text.Motor_MoveUp
+                0x00000000       0x14 build/HAL/hoist/hoist.o
+ .text.Motor_MoveDown
+                0x00000000       0x14 build/HAL/hoist/hoist.o
+ .text.Motor_SetSpeed
+                0x00000000        0x8 build/HAL/hoist/hoist.o
+ .text.Motor_Stop
+                0x00000000       0x1a build/HAL/hoist/hoist.o
+ .text.Motor_Init
+                0x00000000       0x18 build/HAL/hoist/hoist.o
+ .comment       0x00000000       0x13 build/HAL/hoist/hoist.o
  .text          0x00000000        0x0 build/HAL/KeyPad/KeyPad.o
  .data          0x00000000        0x0 build/HAL/KeyPad/KeyPad.o
  .bss           0x00000000        0x0 build/HAL/KeyPad/KeyPad.o
@@ -87,6 +125,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/MCAL/I2C/I2C.o
  .data          0x00000000        0x0 build/MCAL/I2C/I2C.o
  .bss           0x00000000        0x0 build/MCAL/I2C/I2C.o
+ .comment       0x00000000       0x13 build/MCAL/I2C/I2C.o
  .text          0x00000000        0x0 build/MCAL/INTERRUPT/INTERRUPT.o
  .data          0x00000000        0x0 build/MCAL/INTERRUPT/INTERRUPT.o
  .bss           0x00000000        0x0 build/MCAL/INTERRUPT/INTERRUPT.o
@@ -172,6 +211,30 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x20 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
  .debug_str     0x00000000       0x68 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.div
+                0x00000000       0x28 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc   0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_line    0x00000000       0xbd C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_line_str
+                0x00000000       0x5c C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_info    0x00000000       0x24 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_abbrev  0x00000000       0x14 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_aranges
+                0x00000000       0x20 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_str     0x00000000       0x68 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
  .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodsi4.o)
  .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodsi4.o)
  .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodsi4.o)
@@ -261,9 +324,11 @@ Linker script and memory map
 
 LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
 LOAD build/main.o
+LOAD build/APP/COMM/comm_mgr.o
 LOAD build/HAL/74HC165/HC165.o
 LOAD build/HAL/74HC595/74HC595.o
 LOAD build/HAL/DIO/dio.o
+LOAD build/HAL/hoist/hoist.o
 LOAD build/HAL/KeyPad/KeyPad.o
 LOAD build/HAL/SevenSegment/SevenSegment.o
 LOAD build/MCAL/ADC/ADC.o
