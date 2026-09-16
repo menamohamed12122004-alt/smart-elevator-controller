@@ -37,7 +37,7 @@
 
 | Module | Functions | Why | Name | Done |
 |---|---|---|---|---|
-| `elevator_app.c/h` | `Elevator_Init()`, `Elevator_Run()` | Manages the main elevator control loop, floor requests queue, and state transitions (idle, moving, doors open) | Asmaa Naguib |     |
+| `elevator_app.c/h` | `Elevator_Init()`, `Elevator_Run()` | Manages the main elevator control loop, floor requests queue, and state transitions (idle, moving, doors open) | Asmaa Naguib | done    |
 | `dispatch.c/h` | `Dispatch_UpdateQueue()`, `Dispatch_GetNextFloor()` | Implements the scheduling and dispatch algorithm to route the elevator cabin efficiently based on cabin and floor calls |Menna Alla  |  DONE    |
 
 ---
