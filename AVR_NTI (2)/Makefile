@@ -31,6 +31,7 @@ HDRS = LIB/std_types.h \
        MCAL/ADC/ADC_interface.h \
        MCAL/UART/UART_interface.h \
        MCAL/TIMER/timer_interface.h \
+	   MCAL/EXTI/EXTI_interface.h \
 	   MCAL/TIMER/pwm_interface.h
 
 
@@ -38,7 +39,7 @@ OBJS     := $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRCS))
 PREPROCS := $(patsubst %.c,$(BUILD_DIR)/%.i,$(SRCS))
 ASMS     := $(patsubst %.c,$(BUILD_DIR)/%.s,$(SRCS))
 
-INC_DIRS := $(sort . LIB MCAL/GPIO HAL/DIO HAL/hoist MCAL/SPI MCAL/ADC MCAL/UART MCAL/TIMER $(dir $(SRCS)) $(dir $(HDRS)))
+INC_DIRS := $(sort . LIB MCAL/GPIO HAL/DIO HAL/hoist MCAL/SPI MCAL/ADC MCAL/UART  MCAL/TIMER MCAL/EXTI $(dir $(SRCS)) $(dir $(HDRS)))
 INCLUDES := $(addprefix -I,$(INC_DIRS))
 
 # Keep directory creation compatible with the Windows command shell.
