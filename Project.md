@@ -27,7 +27,6 @@
 | `keypad.c/h` | `Keypad_Init()`, `Keypad_GetPressedKey()` | Scans the cabin and floor call buttons using the 74HC165 shift register driver | Maryam Salah|  done   |
 | `motor_ctrl.c/h` | `Motor_MoveUp()`, `Motor_MoveDown()`, `Motor_Stop()`, `Motor_SetSpeed(speed)` | Directs elevator car movement, direction, and speed profiles using DIO and PWM | Asmaa Naguib | done  |
 | `door_ctrl.c/h` | `Door_Open()`, `Door_Close()`, `Door_CheckSafety()` | Manages cabin door automation and emergency safety mechanisms via EXTI | Asmaa Naguib | done    |
-| `sensor_mgr.c/h` | `Sensor_GetFloorPosition()`, `Sensor_GetWeight()` | Evaluates analog floor indicators and Load Cell weight limits using the ADC driver | |    |
 | `display.c/h` | `Display_SetFloor(floorNum)` | Drives the floor number 7-segment displays using the 74HC595 shift register ||    |
 | `comm_mgr.c/h` | `Comm_SendTelemetry(msg)`, `Comm_ReceiveCommand()` | Handles real-time communication and reports with the building-management console via USART | Menna Allah |  done   |
 
