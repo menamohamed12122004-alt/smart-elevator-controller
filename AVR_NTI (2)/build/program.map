@@ -1,17 +1,17 @@
 Archive member included to satisfy reference by file (symbol)
 
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
-                              build/MCAL/TIMER/pwm.o (__umulhisi3)
+                              build/MCAL/TIMER/TIMER.o (__umulhisi3)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
-                              build/APP/COMM/comm_mgr.o (__udivmodhi4)
+                              build/LIB/ring_buffer.o (__udivmodhi4)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodsi4.o)
-                              build/MCAL/TIMER/pwm.o (__udivmodsi4)
+                              build/MCAL/TIMER/TIMER.o (__udivmodsi4)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
                               C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o (exit)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
-                              build/APP/COMM/comm_mgr.o (__do_copy_data)
+                              build/HAL/74HC595/74HC595.o (__do_copy_data)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
-                              build/HAL/door/door.o (__do_clear_bss)
+                              build/APP/DISPATCH/dispatch.o (__do_clear_bss)
 
 Discarded input sections
 
@@ -20,20 +20,42 @@ Discarded input sections
  .text          0x00000000        0x0 build/main.o
  .data          0x00000000        0x0 build/main.o
  .bss           0x00000000        0x0 build/main.o
- .text          0x00000000        0x0 build/APP/COMM/comm_mgr.o
- .data          0x00000000        0x0 build/APP/COMM/comm_mgr.o
- .bss           0x00000000        0x0 build/APP/COMM/comm_mgr.o
- .text.Comm_SendNum
-                0x00000000       0x90 build/APP/COMM/comm_mgr.o
- .text.Comm_Init
-                0x00000000        0xc build/APP/COMM/comm_mgr.o
- .rodata.Comm_SendTelemetry.str1.1
-                0x00000000       0x1b build/APP/COMM/comm_mgr.o
- .text.Comm_SendTelemetry
-                0x00000000       0x5c build/APP/COMM/comm_mgr.o
- .text.Comm_ReceiveCommand
-                0x00000000       0x4a build/APP/COMM/comm_mgr.o
- .comment       0x00000000       0x13 build/APP/COMM/comm_mgr.o
+ .text          0x00000000        0x0 build/LIB/ring_buffer.o
+ .data          0x00000000        0x0 build/LIB/ring_buffer.o
+ .bss           0x00000000        0x0 build/LIB/ring_buffer.o
+ .text.Buffer_Init
+                0x00000000       0x14 build/LIB/ring_buffer.o
+ .text.RingBuffer_Init
+                0x00000000        0x4 build/LIB/ring_buffer.o
+ .text.Buffer_IsEmpty
+                0x00000000       0x14 build/LIB/ring_buffer.o
+ .text.Buffer_IsFull
+                0x00000000       0x16 build/LIB/ring_buffer.o
+ .text.Buffer_GetCount
+                0x00000000        0xe build/LIB/ring_buffer.o
+ .text.Buffer_Enqueue
+                0x00000000       0x7a build/LIB/ring_buffer.o
+ .text.RingBuffer_Enqueue
+                0x00000000        0x4 build/LIB/ring_buffer.o
+ .text.Buffer_Dequeue
+                0x00000000       0x66 build/LIB/ring_buffer.o
+ .text.RingBuffer_Dequeue
+                0x00000000        0x4 build/LIB/ring_buffer.o
+ .comment       0x00000000       0x13 build/LIB/ring_buffer.o
+ .text          0x00000000        0x0 build/APP/DISPATCH/dispatch.o
+ .data          0x00000000        0x0 build/APP/DISPATCH/dispatch.o
+ .bss           0x00000000        0x0 build/APP/DISPATCH/dispatch.o
+ .text.Dispatch_Init
+                0x00000000       0x12 build/APP/DISPATCH/dispatch.o
+ .text.Dispatch_UpdateQueue
+                0x00000000       0x10 build/APP/DISPATCH/dispatch.o
+ .text.Dispatch_ClearFloorRequest
+                0x00000000       0x10 build/APP/DISPATCH/dispatch.o
+ .text.Dispatch_GetNextFloor
+                0x00000000       0x92 build/APP/DISPATCH/dispatch.o
+ .bss.g_u8FloorRequests
+                0x00000000        0x4 build/APP/DISPATCH/dispatch.o
+ .comment       0x00000000       0x13 build/APP/DISPATCH/dispatch.o
  .text          0x00000000        0x0 build/HAL/74HC165/HC165.o
  .data          0x00000000        0x0 build/HAL/74HC165/HC165.o
  .bss           0x00000000        0x0 build/HAL/74HC165/HC165.o
@@ -180,19 +202,20 @@ Discarded input sections
  .text.TIMER0_DelayMS
                 0x00000000       0x36 build/MCAL/TIMER/TIMER.o
  .text.TIMER0_DelayS
-                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+                0x00000000       0x4a build/MCAL/TIMER/TIMER.o
  .text.TIMER0_PWM
-                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+                0x00000000       0x32 build/MCAL/TIMER/TIMER.o
  .text.TIMER0_Stop
-                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+                0x00000000       0x12 build/MCAL/TIMER/TIMER.o
  .text.TIMER1_Init
-                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+                0x00000000       0x2a build/MCAL/TIMER/TIMER.o
  .text.TIMER1_DelayMS
-                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+                0x00000000       0x36 build/MCAL/TIMER/TIMER.o
  .text.TIMER1_PWM
-                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+                0x00000000       0x68 build/MCAL/TIMER/TIMER.o
  .text.TIMER1_Stop
-                0x00000000        0x2 build/MCAL/TIMER/TIMER.o
+                0x00000000       0x12 build/MCAL/TIMER/TIMER.o
+ .comment       0x00000000       0x13 build/MCAL/TIMER/TIMER.o
  .text          0x00000000        0x0 build/MCAL/TIMER/pwm.o
  .data          0x00000000        0x0 build/MCAL/TIMER/pwm.o
  .bss           0x00000000        0x0 build/MCAL/TIMER/pwm.o
@@ -348,7 +371,8 @@ Linker script and memory map
 
 LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
 LOAD build/main.o
-LOAD build/APP/COMM/comm_mgr.o
+LOAD build/LIB/ring_buffer.o
+LOAD build/APP/DISPATCH/dispatch.o
 LOAD build/HAL/74HC165/HC165.o
 LOAD build/HAL/74HC595/74HC595.o
 LOAD build/HAL/DIO/dio.o

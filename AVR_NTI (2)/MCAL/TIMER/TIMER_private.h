@@ -37,9 +37,50 @@
 #define TIMER1_REG_OCR1A  (*(volatile uint16*)0x4A)
 #define TIMER1_REG_ICR1   (*(volatile uint16*)0x46)
 
+#define TIMER_DDRB        (*(volatile uint8*)0x37)
+#define TIMER_PORTB       (*(volatile uint8*)0x38)
+#define TIMER_DDRD        (*(volatile uint8*)0x31)
+#define TIMER_PORTD       (*(volatile uint8*)0x32)
+
 #define TIMSK_REG         (*(volatile uint8*)0x59)
 #define TIFR_REG          (*(volatile uint8*)0x58)
 
-/* TODO: map the bit names for each register. */
+#define TIMER0_FOC0       7u
+#define TIMER0_WGM00      6u
+#define TIMER0_COM01      5u
+#define TIMER0_COM00      4u
+#define TIMER0_WGM01      3u
+#define TIMER0_CS02       2u
+#define TIMER0_CS01       1u
+#define TIMER0_CS00       0u
+
+#define TIMER1_COM1A1     7u
+#define TIMER1_COM1A0     6u
+#define TIMER1_COM1B1     5u
+#define TIMER1_COM1B0     4u
+#define TIMER1_FOC1A      3u
+#define TIMER1_FOC1B      2u
+#define TIMER1_WGM11      1u
+#define TIMER1_WGM10      0u
+
+#define TIMER1_ICNC1      7u
+#define TIMER1_ICES1      6u
+#define TIMER1_WGM13      4u
+#define TIMER1_WGM12      3u
+#define TIMER1_CS12       2u
+#define TIMER1_CS11       1u
+#define TIMER1_CS10       0u
+
+#define TIMER_TOV0        0u
+#define TIMER_OCF0        1u
+#define TIMER_TOV1        2u
+#define TIMER_OCF1B       3u
+#define TIMER_OCF1A       4u
+#define TIMER_ICF1        5u
+#define TIMER_TOV2        6u
+#define TIMER_OCF2        7u
+
+#define TIMER_PB3         3u
+#define TIMER_PD5         5u
 
 #endif /* TIMER_PRIVATE_H */
