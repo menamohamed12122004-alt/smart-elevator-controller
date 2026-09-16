@@ -12,6 +12,38 @@ C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
                               build/HAL/74HC595/74HC595.o (__do_copy_data)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
                               build/APP/DISPATCH/dispatch.o (__do_clear_bss)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                              build/HAL/position/position.o (__subsf3)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o) (__addsf3x)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+                              build/HAL/position/position.o (__ltsf2)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                              build/HAL/position/position.o (__divsf3)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3.o) (__divsf3x)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                              build/HAL/position/position.o (__floatunsisf)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o) (__fp_cmp)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_inf)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_nan)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_pscA)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_pscB)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o) (__fp_round)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_split3)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_zero)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                              build/HAL/position/position.o (__mulsf3)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                              C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o) (__mulsf3x)
 
 Discarded input sections
 
@@ -132,6 +164,18 @@ Discarded input sections
                 0x00000000       0x18 build/HAL/KeyPad/KeyPad.o
  .text.KeyPad_GetPressedKey
                 0x00000000       0xf2 build/HAL/KeyPad/KeyPad.o
+ .text          0x00000000        0x0 build/HAL/position/position.o
+ .data          0x00000000        0x0 build/HAL/position/position.o
+ .bss           0x00000000        0x0 build/HAL/position/position.o
+ .text.POS_Init
+                0x00000000        0x2 build/HAL/position/position.o
+ .text.POS_GetCm
+                0x00000000       0xac build/HAL/position/position.o
+ .text.POS_GetNearestFloor
+                0x00000000       0xf0 build/HAL/position/position.o
+ .rodata.floor_positions
+                0x00000000       0x10 build/HAL/position/position.o
+ .comment       0x00000000       0x13 build/HAL/position/position.o
  .text          0x00000000        0x0 build/HAL/SevenSegment/SevenSegment.o
  .data          0x00000000        0x0 build/HAL/SevenSegment/SevenSegment.o
  .bss           0x00000000        0x0 build/HAL/SevenSegment/SevenSegment.o
@@ -234,6 +278,16 @@ Discarded input sections
  .text.UART_ReceiveByte
                 0x00000000       0x1a build/MCAL/UART/UART.o
  .comment       0x00000000       0x13 build/MCAL/UART/UART.o
+ .text          0x00000000        0x0 build/APP/DISPATCH/elevator/elevator_app.o
+ .data          0x00000000        0x0 build/APP/DISPATCH/elevator/elevator_app.o
+ .bss           0x00000000        0x0 build/APP/DISPATCH/elevator/elevator_app.o
+ .text.Elevator_Init
+                0x00000000        0xe build/APP/DISPATCH/elevator/elevator_app.o
+ .text.Elevator_Run
+                0x00000000       0x34 build/APP/DISPATCH/elevator/elevator_app.o
+ .bss.g_ElevatorState
+                0x00000000        0x2 build/APP/DISPATCH/elevator/elevator_app.o
+ .comment       0x00000000       0x13 build/APP/DISPATCH/elevator/elevator_app.o
  .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
  .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
  .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
@@ -354,6 +408,86 @@ Discarded input sections
                 0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
                 0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .text.avr-libc.fplib
+                0x00000000        0xe C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .text.avr-libc.fplib
+                0x00000000       0xcc C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+ .text.avr-libc.fplib
+                0x00000000        0xa C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
+ .text.avr-libc.fplib
+                0x00000000        0x8 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .text.avr-libc.fplib
+                0x00000000       0xdc C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .text.avr-libc.fplib
+                0x00000000       0x7a C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+ .text.avr-libc.fplib
+                0x00000000       0x48 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .text.avr-libc.fplib
+                0x00000000        0xc C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .text.avr-libc.fplib
+                0x00000000        0x6 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .text.avr-libc.fplib
+                0x00000000        0xe C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .text.avr-libc.fplib
+                0x00000000        0xe C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .text.avr-libc.fplib
+                0x00000000       0x22 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .text.avr-libc.fplib
+                0x00000000       0x44 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .text.avr-libc.fplib
+                0x00000000        0xe C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .text.avr-libc.fplib
+                0x00000000        0x8 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+ .text.avr-libc.fplib
+                0x00000000       0xd2 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
 
 Memory Configuration
 
@@ -380,6 +514,7 @@ LOAD build/HAL/display/display.o
 LOAD build/HAL/door/door.o
 LOAD build/HAL/hoist/hoist.o
 LOAD build/HAL/KeyPad/KeyPad.o
+LOAD build/HAL/position/position.o
 LOAD build/HAL/SevenSegment/SevenSegment.o
 LOAD build/MCAL/ADC/ADC.o
 LOAD build/MCAL/GPIO/GPIO.o
@@ -389,6 +524,7 @@ LOAD build/MCAL/SPI/SPI.o
 LOAD build/MCAL/TIMER/TIMER.o
 LOAD build/MCAL/TIMER/pwm.o
 LOAD build/MCAL/UART/UART.o
+LOAD build/APP/DISPATCH/elevator/elevator_app.o
 START GROUP
 LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a
 LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a
