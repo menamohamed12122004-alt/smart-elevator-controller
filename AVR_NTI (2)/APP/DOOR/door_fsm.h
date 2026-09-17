@@ -1,29 +1,94 @@
-#ifndef DOOR_FSM_H
-#define DOOR_FSM_H
-
 /*
- * Elevator Door FSM Header File
- * Manages Door States, Dwell Time, and Safety Reversal
+ * Elevator Door FSM Implementation File
  */
 
 #include "STD_TYPES.h"
-#include "door_interface.h"   /* استدعاء الـ interface لجلب الـ DoorState_t أو الـ Door_State_t الموجود هناك */
+#include "door_interface.h"   /* نحتاج استدعاء الـ interface الخاص بالهاردوير */
+#include "door_fsm.h"
 
-/* ---------------- Function Prototypes ---------------- */
+#define DWELL_TIME_TICKS     50    /* زمن بقاء الباب مفتوحاً قبل البدء بالإغلاق تلقائياً */
+#define MOVEMENT_TIME_TICKS  30    /* زمن يستغرقه الباب للفتح أو الإغلاق الكامل */
 
-/* تهيئة الـ FSM وحالة الباب الابتدائية */
-void Door_FSM_Init(void);
+static Door_State_t g_eCurrentState = DOOR_CLOSED;
+static uint16 g_u16TimerTicks = 0;
 
-/* طلب فتح الباب عبر الـ FSM */
-void Door_FSM_Open(void);
+void Door_FSM_Init(void) {
+    g_eCurrentState = DOOR_CLOSED;
+    g_u16TimerTicks = 0;
+    // استدعاء تهيئة الهاردوير الفعلي
+    Door_Init();
+}
 
-/* طلب إغلاق الباب عبر الـ FSM */
-void Door_FSM_Close(void);
+void Door_FSM_Open(void) {
+    if (g_eCurrentState != DOOR_OPENED) {
+        g_eCurrentState = DOOR_OPENING;
+        g_u16TimerTicks = 0;
+        // تطبيق الأمر فعلياً على الهاردوير
+        Door_Open(); 
+    }
+}
 
-/* الدالة الرئيسية المسؤولة عن تنفيذ الـ FSM (تُستدعى دورياً في الـ Main Loop) */
-void Door_Run(uint8 Copy_u8ObstructionDetected);
+void Door_FSM_Close(void) {
+    if (g_eCurrentState == DOOR_OPENED) {
+        g_eCurrentState = DOOR_CLOSING;
+        g_u16TimerTicks = 0;
+        // تطبيق الأمر فعلياً على الهاردوير
+        Door_Close();
+    }
+}
 
-/* معرفة حالة الباب الحالية من الـ FSM */
-Door_State_t Door_FSM_GetState(void);
+Door_State_t Door_FSM_GetState(void) {
+    return g_eCurrentState;
+}
 
-#endif /* DOOR_FSM_H */
+void Door_Run(uint8 Copy_u8ObstructionDetected) {
+    switch (g_eCurrentState) {
+        
+        case DOOR_CLOSED:
+            /* الباب مغلق بالكامل، بانتظار أمر فتح */
+            break;
+
+        case DOOR_OPENING:
+            g_u16TimerTicks++;
+            /* الانتهاء من الفتح بعد انقضاء الوقت المطلوب */
+            if (g_u16TimerTicks >= MOVEMENT_TIME_TICKS) {
+                g_eCurrentState = DOOR_OPENED;
+                g_u16TimerTicks = 0;
+            }
+            break;
+
+        case DOOR_OPENED:
+            /* في حالة اكتشاف عائق أثناء الفتح، نعيد العد التنازلي للـ Dwell */
+            if (Copy_u8ObstructionDetected) {
+                g_u16TimerTicks = 0;
+            } else {
+                g_u16TimerTicks++;
+                /* بعد انقضاء زمن الـ Dwell Time يبدأ الباب بالإغلاق تلقائياً */
+                if (g_u16TimerTicks >= DWELL_TIME_TICKS) {
+                    g_eCurrentState = DOOR_CLOSING;
+                    g_u16TimerTicks = 0;
+                    Door_Close(); // أمر للهاردوير بالإغلاق
+                }
+            }
+            break;
+
+        case DOOR_CLOSING:
+            /* ميزة الأمان Reversal: لو ظهر عائق أثناء الإغلاق يفتح الباب فوراً */
+            if (Copy_u8ObstructionDetected) {
+                g_eCurrentState = DOOR_OPENING;
+                g_u16TimerTicks = 0;
+                Door_Open(); // أمر للهاردوير بالفتح فوراً
+            } else {
+                g_u16TimerTicks++;
+                if (g_u16TimerTicks >= MOVEMENT_TIME_TICKS) {
+                    g_eCurrentState = DOOR_CLOSED;
+                    g_u16TimerTicks = 0;
+                }
+            }
+            break;
+
+        default:
+            g_eCurrentState = DOOR_CLOSED;
+            break;
+    }
+}
