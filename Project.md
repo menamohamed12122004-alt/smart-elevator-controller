@@ -28,7 +28,7 @@
 | `calls165.c/h` | `BTN_Scan()`, `BTN_Pressed(n)` | Scans and debounces 16 cabin and floor call buttons using the 74HC165 shift register driver | Asmaa Naguib |  done   |
 | `motor_ctrl.c/h` | `Motor_MoveUp()`, `Motor_MoveDown()`, `Motor_Stop()`, `Motor_SetSpeed(speed)` | Directs elevator car movement, direction, and speed profiles using DIO and PWM | Asmaa Naguib | done  |
 | `door_ctrl.c/h` | `Door_Open()`, `Door_Close()`, `Door_CheckSafety()` | Manages cabin door automation and emergency safety mechanisms via EXTI | Asmaa Naguib | done    |
-| `display.c/h` | `Display_SetFloor(floorNum)` | Drives the floor number 7-segment displays using the 74HC595 shift register |    |   done |
+| `display.c/h` | `Display_SetFloor(floorNum)` | Drives the floor number 7-segment displays using the 74HC595 shift register |  Maryam salah  |   done |
 |`lcd_i2c.c/h` | `LCD_I2C_Init()`, `LCD_I2C_SendString()`, `LCD_I2C_SetCursor()` | Displays real-time elevator floor status, operational states, and system messages via I2C and PCF8574 | Asmaa Naguib | done |
 | `comm_mgr.c/h` | `Comm_SendTelemetry(msg)`, `Comm_ReceiveCommand()` | Handles real-time communication and reports with the building-management console via USART | Menna Allah |  done   |
 | `position.c/h` | `POS_Init()`, `POS_GetCm()`, `POS_GetNearestFloor()` | Converts ADC0 raw values into centimeters and tracks car position and floor proximity |  Maryam Salah  |  done     |
