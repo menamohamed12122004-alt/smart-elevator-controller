@@ -1,27 +1,29 @@
 Archive member included to satisfy reference by file (symbol)
 
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
-                              build/MCAL/TIMER/TIMER.o (__umulhisi3)
+                              build/HAL/loadcell/loadcell.o (__umulhisi3)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodhi4.o)
                               build/LIB/ring_buffer.o (__udivmodhi4)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_udivmodsi4.o)
-                              build/MCAL/TIMER/TIMER.o (__udivmodsi4)
+                              build/HAL/loadcell/loadcell.o (__udivmodsi4)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_exit.o)
                               C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o (exit)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_copy_data.o)
-                              build/HAL/74HC595/74HC595.o (__do_copy_data)
+                              build/APP/COMM/comm_mgr.o (__do_copy_data)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_clear_bss.o)
                               build/APP/DISPATCH/dispatch.o (__do_clear_bss)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
-                              build/HAL/position/position.o (__subsf3)
+                              build/APP/motion/motion.o (__subsf3)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
                               C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o) (__addsf3x)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
-                              build/HAL/position/position.o (__ltsf2)
+                              build/APP/motion/motion.o (__ltsf2)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
-                              build/HAL/position/position.o (__divsf3)
+                              build/APP/motion/motion.o (__divsf3)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
                               C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3.o) (__divsf3x)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                              build/APP/motion/motion.o (__fixunssfsi)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
                               build/HAL/position/position.o (__floatunsisf)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
@@ -40,8 +42,10 @@ C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o
                               C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_split3)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
                               C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_zero)
+C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(gesf2.o)
+                              build/APP/motion/motion.o (__gesf2)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
-                              build/HAL/position/position.o (__mulsf3)
+                              build/APP/motion/motion.o (__mulsf3)
 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
                               C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o) (__mulsf3x)
 
@@ -74,6 +78,20 @@ Discarded input sections
  .text.RingBuffer_Dequeue
                 0x00000000        0x4 build/LIB/ring_buffer.o
  .comment       0x00000000       0x13 build/LIB/ring_buffer.o
+ .text          0x00000000        0x0 build/APP/COMM/comm_mgr.o
+ .data          0x00000000        0x0 build/APP/COMM/comm_mgr.o
+ .bss           0x00000000        0x0 build/APP/COMM/comm_mgr.o
+ .text.Comm_SendNum
+                0x00000000       0x90 build/APP/COMM/comm_mgr.o
+ .text.Comm_Init
+                0x00000000        0xc build/APP/COMM/comm_mgr.o
+ .rodata.Comm_SendTelemetry.str1.1
+                0x00000000       0x1b build/APP/COMM/comm_mgr.o
+ .text.Comm_SendTelemetry
+                0x00000000       0x5c build/APP/COMM/comm_mgr.o
+ .text.Comm_ReceiveCommand
+                0x00000000       0x4a build/APP/COMM/comm_mgr.o
+ .comment       0x00000000       0x13 build/APP/COMM/comm_mgr.o
  .text          0x00000000        0x0 build/APP/DISPATCH/dispatch.o
  .data          0x00000000        0x0 build/APP/DISPATCH/dispatch.o
  .bss           0x00000000        0x0 build/APP/DISPATCH/dispatch.o
@@ -88,6 +106,69 @@ Discarded input sections
  .bss.g_u8FloorRequests
                 0x00000000        0x4 build/APP/DISPATCH/dispatch.o
  .comment       0x00000000       0x13 build/APP/DISPATCH/dispatch.o
+ .text          0x00000000        0x0 build/APP/DOOR/door_fsm.o
+ .data          0x00000000        0x0 build/APP/DOOR/door_fsm.o
+ .bss           0x00000000        0x0 build/APP/DOOR/door_fsm.o
+ .comment       0x00000000       0x13 build/APP/DOOR/door_fsm.o
+ .text          0x00000000        0x0 build/APP/elevator/elevator_app.o
+ .data          0x00000000        0x0 build/APP/elevator/elevator_app.o
+ .bss           0x00000000        0x0 build/APP/elevator/elevator_app.o
+ .text.Elevator_Init
+                0x00000000        0xe build/APP/elevator/elevator_app.o
+ .text.Elevator_Run
+                0x00000000       0x34 build/APP/elevator/elevator_app.o
+ .bss.g_ElevatorState
+                0x00000000        0x2 build/APP/elevator/elevator_app.o
+ .comment       0x00000000       0x13 build/APP/elevator/elevator_app.o
+ .text          0x00000000        0x0 build/APP/FAULTLOG/faultlog.o
+ .data          0x00000000        0x0 build/APP/FAULTLOG/faultlog.o
+ .bss           0x00000000        0x0 build/APP/FAULTLOG/faultlog.o
+ .text.FLG_Init
+                0x00000000       0x28 build/APP/FAULTLOG/faultlog.o
+ .text.FLG_Append
+                0x00000000       0x4c build/APP/FAULTLOG/faultlog.o
+ .rodata.FLG_Dump.str1.1
+                0x00000000       0x4f build/APP/FAULTLOG/faultlog.o
+ .text.FLG_Dump
+                0x00000000       0x62 build/APP/FAULTLOG/faultlog.o
+ .bss.g_u8Count
+                0x00000000        0x1 build/APP/FAULTLOG/faultlog.o
+ .bss.g_u8Head  0x00000000        0x1 build/APP/FAULTLOG/faultlog.o
+ .bss.g_sFaultBuffer
+                0x00000000       0x80 build/APP/FAULTLOG/faultlog.o
+ .comment       0x00000000       0x13 build/APP/FAULTLOG/faultlog.o
+ .text          0x00000000        0x0 build/APP/motion/motion.o
+ .data          0x00000000        0x0 build/APP/motion/motion.o
+ .bss           0x00000000        0x0 build/APP/motion/motion.o
+ .text.MOT_Init
+                0x00000000       0x2c build/APP/motion/motion.o
+ .text.MOT_GoTo
+                0x00000000       0x20 build/APP/motion/motion.o
+ .text.MOT_Stop
+                0x00000000       0x22 build/APP/motion/motion.o
+ .text.MOT_Step
+                0x00000000      0x24a build/APP/motion/motion.o
+ .bss.current_target_speed
+                0x00000000        0x4 build/APP/motion/motion.o
+ .bss.target_position_cm
+                0x00000000        0x4 build/APP/motion/motion.o
+ .bss.current_motion_state
+                0x00000000        0x2 build/APP/motion/motion.o
+ .comment       0x00000000       0x13 build/APP/motion/motion.o
+ .text          0x00000000        0x0 build/APP/SAFETY/safety.o
+ .data          0x00000000        0x0 build/APP/SAFETY/safety.o
+ .bss           0x00000000        0x0 build/APP/SAFETY/safety.o
+ .text.SAF_Init
+                0x00000000        0xa build/APP/SAFETY/safety.o
+ .text.SAF_Evaluate
+                0x00000000       0x40 build/APP/SAFETY/safety.o
+ .text.SAF_IsActive
+                0x00000000       0x12 build/APP/SAFETY/safety.o
+ .text.SAF_GetActiveFault
+                0x00000000        0xa build/APP/SAFETY/safety.o
+ .bss.g_eActiveFault
+                0x00000000        0x2 build/APP/SAFETY/safety.o
+ .comment       0x00000000       0x13 build/APP/SAFETY/safety.o
  .text          0x00000000        0x0 build/HAL/74HC165/HC165.o
  .data          0x00000000        0x0 build/HAL/74HC165/HC165.o
  .bss           0x00000000        0x0 build/HAL/74HC165/HC165.o
@@ -109,6 +190,18 @@ Discarded input sections
                 0x00000000       0x18 build/HAL/74HC595/74HC595.o
  .rodata.SEGMENT_MAP
                 0x00000000        0x4 build/HAL/74HC595/74HC595.o
+ .text          0x00000000        0x0 build/HAL/calls165/calls165.o
+ .data          0x00000000        0x0 build/HAL/calls165/calls165.o
+ .bss           0x00000000        0x0 build/HAL/calls165/calls165.o
+ .text.BTN_Init
+                0x00000000        0xe build/HAL/calls165/calls165.o
+ .text.BTN_Scan
+                0x00000000       0x30 build/HAL/calls165/calls165.o
+ .text.BTN_Pressed
+                0x00000000       0x20 build/HAL/calls165/calls165.o
+ .bss.g_u16CurrentButtonStates
+                0x00000000        0x2 build/HAL/calls165/calls165.o
+ .comment       0x00000000       0x13 build/HAL/calls165/calls165.o
  .text          0x00000000        0x0 build/HAL/DIO/dio.o
  .data          0x00000000        0x0 build/HAL/DIO/dio.o
  .bss           0x00000000        0x0 build/HAL/DIO/dio.o
@@ -143,6 +236,24 @@ Discarded input sections
  .bss.g_DoorState
                 0x00000000        0x2 build/HAL/door/door.o
  .comment       0x00000000       0x13 build/HAL/door/door.o
+ .text          0x00000000        0x0 build/HAL/gong/gong.o
+ .data          0x00000000        0x0 build/HAL/gong/gong.o
+ .bss           0x00000000        0x0 build/HAL/gong/gong.o
+ .text.GONG_Init
+                0x00000000       0x1c build/HAL/gong/gong.o
+ .text.GONG_Stop
+                0x00000000       0x1a build/HAL/gong/gong.o
+ .text.GONG_Play
+                0x00000000       0x82 build/HAL/gong/gong.o
+ .text.GONG_Update
+                0x00000000       0xae build/HAL/gong/gong.o
+ .bss.s_sequenceStep
+                0x00000000        0x1 build/HAL/gong/gong.o
+ .bss.s_timerTicks
+                0x00000000        0x2 build/HAL/gong/gong.o
+ .bss.s_currentMode
+                0x00000000        0x2 build/HAL/gong/gong.o
+ .comment       0x00000000       0x13 build/HAL/gong/gong.o
  .text          0x00000000        0x0 build/HAL/hoist/hoist.o
  .data          0x00000000        0x0 build/HAL/hoist/hoist.o
  .bss           0x00000000        0x0 build/HAL/hoist/hoist.o
@@ -157,13 +268,42 @@ Discarded input sections
  .text.Motor_Init
                 0x00000000       0x18 build/HAL/hoist/hoist.o
  .comment       0x00000000       0x13 build/HAL/hoist/hoist.o
- .text          0x00000000        0x0 build/HAL/KeyPad/KeyPad.o
- .data          0x00000000        0x0 build/HAL/KeyPad/KeyPad.o
- .bss           0x00000000        0x0 build/HAL/KeyPad/KeyPad.o
- .text.KeyPad_Init
-                0x00000000       0x18 build/HAL/KeyPad/KeyPad.o
- .text.KeyPad_GetPressedKey
-                0x00000000       0xf2 build/HAL/KeyPad/KeyPad.o
+ .text          0x00000000        0x0 build/HAL/lcd_i2c/lcd_i2c.o
+ .data          0x00000000        0x0 build/HAL/lcd_i2c/lcd_i2c.o
+ .bss           0x00000000        0x0 build/HAL/lcd_i2c/lcd_i2c.o
+ .text.LCD_I2C_WritePulse
+                0x00000000       0x36 build/HAL/lcd_i2c/lcd_i2c.o
+ .text.LCD_I2C_SendCommand
+                0x00000000       0x24 build/HAL/lcd_i2c/lcd_i2c.o
+ .text.LCD_I2C_SendData
+                0x00000000       0x28 build/HAL/lcd_i2c/lcd_i2c.o
+ .text.LCD_I2C_SendString
+                0x00000000       0x1a build/HAL/lcd_i2c/lcd_i2c.o
+ .text.LCD_I2C_SetCursor
+                0x00000000       0x16 build/HAL/lcd_i2c/lcd_i2c.o
+ .text.LCD_I2C_Clear
+                0x00000000       0x14 build/HAL/lcd_i2c/lcd_i2c.o
+ .text.LCD_I2C_Init
+                0x00000000       0x68 build/HAL/lcd_i2c/lcd_i2c.o
+ .data.Global_u8SlaveAddress
+                0x00000000        0x1 build/HAL/lcd_i2c/lcd_i2c.o
+ .comment       0x00000000       0x13 build/HAL/lcd_i2c/lcd_i2c.o
+ .text          0x00000000        0x0 build/HAL/loadcell/loadcell.o
+ .data          0x00000000        0x0 build/HAL/loadcell/loadcell.o
+ .bss           0x00000000        0x0 build/HAL/loadcell/loadcell.o
+ .text.LOADCELL_Init
+                0x00000000       0x22 build/HAL/loadcell/loadcell.o
+ .text.LOADCELL_ReadKg
+                0x00000000       0xbc build/HAL/loadcell/loadcell.o
+ .text.LOADCELL_IsOverloaded
+                0x00000000        0x6 build/HAL/loadcell/loadcell.o
+ .bss.s_sampleIdx
+                0x00000000        0x1 build/HAL/loadcell/loadcell.o
+ .bss.s_samples
+                0x00000000        0x6 build/HAL/loadcell/loadcell.o
+ .bss.s_isOverloaded
+                0x00000000        0x1 build/HAL/loadcell/loadcell.o
+ .comment       0x00000000       0x13 build/HAL/loadcell/loadcell.o
  .text          0x00000000        0x0 build/HAL/position/position.o
  .data          0x00000000        0x0 build/HAL/position/position.o
  .bss           0x00000000        0x0 build/HAL/position/position.o
@@ -278,16 +418,6 @@ Discarded input sections
  .text.UART_ReceiveByte
                 0x00000000       0x1a build/MCAL/UART/UART.o
  .comment       0x00000000       0x13 build/MCAL/UART/UART.o
- .text          0x00000000        0x0 build/APP/DISPATCH/elevator/elevator_app.o
- .data          0x00000000        0x0 build/APP/DISPATCH/elevator/elevator_app.o
- .bss           0x00000000        0x0 build/APP/DISPATCH/elevator/elevator_app.o
- .text.Elevator_Init
-                0x00000000        0xe build/APP/DISPATCH/elevator/elevator_app.o
- .text.Elevator_Run
-                0x00000000       0x34 build/APP/DISPATCH/elevator/elevator_app.o
- .bss.g_ElevatorState
-                0x00000000        0x2 build/APP/DISPATCH/elevator/elevator_app.o
- .comment       0x00000000       0x13 build/APP/DISPATCH/elevator/elevator_app.o
  .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
  .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
  .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a(_umulhisi3.o)
@@ -433,6 +563,11 @@ Discarded input sections
  .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
  .text.avr-libc.fplib
                 0x00000000       0xdc C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+ .text.avr-libc.fplib
+                0x00000000       0x5e C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
  .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
  .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
  .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
@@ -478,6 +613,11 @@ Discarded input sections
  .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
  .text.avr-libc.fplib
                 0x00000000        0xe C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(gesf2.o)
+ .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(gesf2.o)
+ .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(gesf2.o)
+ .text.avr-libc.fplib
+                0x00000000        0xa C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(gesf2.o)
  .text          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
  .data          0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
  .bss           0x00000000        0x0 C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
@@ -506,14 +646,23 @@ Linker script and memory map
 LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5/crtatmega32.o
 LOAD build/main.o
 LOAD build/LIB/ring_buffer.o
+LOAD build/APP/COMM/comm_mgr.o
 LOAD build/APP/DISPATCH/dispatch.o
+LOAD build/APP/DOOR/door_fsm.o
+LOAD build/APP/elevator/elevator_app.o
+LOAD build/APP/FAULTLOG/faultlog.o
+LOAD build/APP/motion/motion.o
+LOAD build/APP/SAFETY/safety.o
 LOAD build/HAL/74HC165/HC165.o
 LOAD build/HAL/74HC595/74HC595.o
+LOAD build/HAL/calls165/calls165.o
 LOAD build/HAL/DIO/dio.o
 LOAD build/HAL/display/display.o
 LOAD build/HAL/door/door.o
+LOAD build/HAL/gong/gong.o
 LOAD build/HAL/hoist/hoist.o
-LOAD build/HAL/KeyPad/KeyPad.o
+LOAD build/HAL/lcd_i2c/lcd_i2c.o
+LOAD build/HAL/loadcell/loadcell.o
 LOAD build/HAL/position/position.o
 LOAD build/HAL/SevenSegment/SevenSegment.o
 LOAD build/MCAL/ADC/ADC.o
@@ -524,7 +673,6 @@ LOAD build/MCAL/SPI/SPI.o
 LOAD build/MCAL/TIMER/TIMER.o
 LOAD build/MCAL/TIMER/pwm.o
 LOAD build/MCAL/UART/UART.o
-LOAD build/APP/DISPATCH/elevator/elevator_app.o
 START GROUP
 LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/avr5\libgcc.a
 LOAD C:/avr-gcc/bin/../lib/gcc/avr/15.2.0/../../../../avr/lib/avr5\libm.a
