@@ -22,24 +22,39 @@ SRCS += $(wildcard */*/*/*.c)
 SRCS += $(wildcard */*/*/*/*.c)
 SRCS := $(filter-out $(BUILD_DIR)/% MCAL/EXTI/EXTI.c,$(SRCS))
 
-HDRS = LIB/std_types.h \
-       LIB/bit_math.h \
+HDRS = LIB/STD_TYPES.h \
+       LIB/MATH.h \
+	   LIB/ring_buffer.h \
        MCAL/GPIO/GPIO_interface.h \
        HAL/DIO/dio_interface.h \
 	   HAL/hoist/hoist_interface.h \
+	   HAL/74HC165/HC165_interface.h \
+	   HAL/74HC595/74HC595_interface.h \
        MCAL/SPI/SPI_interface.h \
+	   HAL/calls165/calls165_interface.h \
+	   HAL/display/display_interface.h \
+	   HAL/door/door_interface.h \
+	   HAL/loadcell/loadcell_interface.h \
+	   HAL/position/position_interface.h \
+	   HAL/SevenSegment/SevenSegment_interface.h \
        MCAL/ADC/ADC_interface.h \
        MCAL/UART/UART_interface.h \
        MCAL/TIMER/timer_interface.h \
 	   MCAL/EXTI/EXTI_interface.h \
-	   MCAL/TIMER/pwm_interface.h
+	   MCAL/TIMER/pwm_interface.h \
+	   APP/elevator/elevator_interface.h \
+       APP/DISPATCH/dispatch.h \
+       APP/motion/motion_interface.h \
+       APP/DOOR/door_fsm.h \
+       APP/SAFETY/safety_interface.h \
+       APP/FAULTLOG/faultlog_interface.h 
 
 
 OBJS     := $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRCS))
 PREPROCS := $(patsubst %.c,$(BUILD_DIR)/%.i,$(SRCS))
 ASMS     := $(patsubst %.c,$(BUILD_DIR)/%.s,$(SRCS))
 
-INC_DIRS := $(sort . LIB MCAL/GPIO HAL/DIO HAL/hoist MCAL/SPI MCAL/ADC MCAL/UART  MCAL/TIMER MCAL/EXTI $(dir $(SRCS)) $(dir $(HDRS)))
+INC_DIRS := $(sort . LIB MCAL/GPIO HAL/DIO HAL/calls165 APP/FAULTLOG APP/motion APP/DOOR APP/SAFETY APP/elevator APP/DISPATCH HAL/74HC165 HAL/74HC595  HAL/display HAL/position HAL/loadcell HAL/door HAL/SevenSegment  HAL/hoist MCAL/SPI MCAL/ADC MCAL/UART  MCAL/TIMER MCAL/EXTI $(dir $(SRCS)) $(dir $(HDRS)))
 INCLUDES := $(addprefix -I,$(INC_DIRS))
 
 # Keep directory creation compatible with the Windows command shell.
