@@ -47,6 +47,7 @@ HDRS = LIB/STD_TYPES.h \
        APP/motion/motion_interface.h \
        APP/DOOR/door_fsm.h \
        APP/SAFETY/safety_interface.h \
+	   APP/COMM/comm_mgr.h \
        APP/FAULTLOG/faultlog_interface.h 
 
 
@@ -54,7 +55,7 @@ OBJS     := $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRCS))
 PREPROCS := $(patsubst %.c,$(BUILD_DIR)/%.i,$(SRCS))
 ASMS     := $(patsubst %.c,$(BUILD_DIR)/%.s,$(SRCS))
 
-INC_DIRS := $(sort . LIB MCAL/GPIO HAL/DIO HAL/calls165 APP/FAULTLOG APP/motion APP/DOOR APP/SAFETY APP/elevator APP/DISPATCH HAL/74HC165 HAL/74HC595  HAL/display HAL/position HAL/loadcell HAL/door HAL/SevenSegment  HAL/hoist MCAL/SPI MCAL/ADC MCAL/UART  MCAL/TIMER MCAL/EXTI $(dir $(SRCS)) $(dir $(HDRS)))
+INC_DIRS := $(sort . LIB MCAL/GPIO HAL/DIO HAL/calls165 APP/COMM APP/FAULTLOG APP/motion APP/DOOR APP/SAFETY APP/elevator APP/DISPATCH HAL/74HC165 HAL/74HC595  HAL/display HAL/position HAL/loadcell HAL/door HAL/SevenSegment  HAL/hoist MCAL/SPI MCAL/ADC MCAL/UART  MCAL/TIMER MCAL/EXTI $(dir $(SRCS)) $(dir $(HDRS)))
 INCLUDES := $(addprefix -I,$(INC_DIRS))
 
 # Keep directory creation compatible with the Windows command shell.
