@@ -7,29 +7,23 @@
  */
 
 #include "STD_TYPES.h"
-
-typedef enum {
-    DOOR_CLOSED = 0,
-    DOOR_OPENING,
-    DOOR_OPEN,
-    DOOR_CLOSING
-} DoorState_t;
+#include "door_interface.h"   /* استدعاء الـ interface لجلب الـ DoorState_t أو الـ Door_State_t الموجود هناك */
 
 /* ---------------- Function Prototypes ---------------- */
 
 /* تهيئة الـ FSM وحالة الباب الابتدائية */
-void Door_Init(void);
+void Door_FSM_Init(void);
 
-/* طلب فتح الباب يدوياً أو عند الوصول لدور */
-void Door_Open(void);
+/* طلب فتح الباب عبر الـ FSM */
+void Door_FSM_Open(void);
 
-/* طلب إغلاق الباب يدوياً */
-void Door_Close(void);
+/* طلب إغلاق الباب عبر الـ FSM */
+void Door_FSM_Close(void);
 
 /* الدالة الرئيسية المسؤولة عن تنفيذ الـ FSM (تُستدعى دورياً في الـ Main Loop) */
 void Door_Run(uint8 Copy_u8ObstructionDetected);
 
-/* معرفة حالة الباب الحالية */
-DoorState_t Door_GetState(void);
+/* معرفة حالة الباب الحالية من الـ FSM */
+Door_State_t Door_FSM_GetState(void);
 
 #endif /* DOOR_FSM_H */

@@ -1,5 +1,5 @@
 #include "loadcell.h"
-#include "adc.h"
+#include "ADC_interface.h"
 
 static uint16 s_currentLoadKg = 0u;
 static uint8  s_isOverloaded  = 0u;
@@ -37,7 +37,8 @@ void LOADCELL_Init(void)
 uint16 LOADCELL_ReadKg(void)
 {
     //  Read raw value from ADC Channel 1 (PA1) 
-    uint16 rawAdc = ADC_Read(LOADCELL_ADC_CHANNEL);
+    uint16 rawAdc ;
+    STD_ReturnType status = ADC_ReadChannel(LOADCELL_ADC_CHANNEL, &rawAdc);
     
     /* 2. Store sample in ring buffer for median filter */
     s_samples[s_sampleIdx] = rawAdc;
