@@ -28,11 +28,12 @@
 | `calls165.c/h` | `BTN_Scan()`, `BTN_Pressed(n)` | Scans and debounces 16 cabin and floor call buttons using the 74HC165 shift register driver | Asmaa Naguib |  done   |
 | `motor_ctrl.c/h` | `Motor_MoveUp()`, `Motor_MoveDown()`, `Motor_Stop()`, `Motor_SetSpeed(speed)` | Directs elevator car movement, direction, and speed profiles using DIO and PWM | Asmaa Naguib | done  |
 | `door_ctrl.c/h` | `Door_Open()`, `Door_Close()`, `Door_CheckSafety()` | Manages cabin door automation and emergency safety mechanisms via EXTI | Asmaa Naguib | done    |
-| `display.c/h` | `Display_SetFloor(floorNum)` | Drives the floor number 7-segment displays using the 74HC595 shift register |    |   done    |
+| `display.c/h` | `Display_SetFloor(floorNum)` | Drives the floor number 7-segment displays using the 74HC595 shift register |    |   done |
+|`lcd_i2c.c/h` | `LCD_I2C_Init()`, `LCD_I2C_SendString()`, `LCD_I2C_SetCursor()` | Displays real-time elevator floor status, operational states, and system messages via I2C and PCF8574 | Asmaa Naguib | done |
 | `comm_mgr.c/h` | `Comm_SendTelemetry(msg)`, `Comm_ReceiveCommand()` | Handles real-time communication and reports with the building-management console via USART | Menna Allah |  done   |
-| `position.c/h` | `POS_Init()`, `POS_GetCm()`, `POS_GetNearestFloor()` | Converts ADC0 raw values into centimeters and tracks car position and floor proximity |     |  done     |
-| `loadcell.c/h` | `LoadCell_Init()`, `LoadCell_GetWeightKg()` | Reads passenger weight from the load cell sensor and detects overload conditions |     |       |
-| `gong.c/h` | `Gong_PlayArrivalTone(dir)`, `Gong_PlayAlarm()` | Manages arrival chimes (single/double tone) and warning buzzer sounds |   |    |
+| `position.c/h` | `POS_Init()`, `POS_GetCm()`, `POS_GetNearestFloor()` | Converts ADC0 raw values into centimeters and tracks car position and floor proximity |  Maryam Salah  |  done     |
+| `loadcell.c/h` | `LoadCell_Init()`, `LoadCell_GetWeightKg()` | Reads passenger weight from the load cell sensor and detects overload conditions | Eman | done |
+| `gong.c/h` | `Gong_PlayArrivalTone(dir)`, `Gong_PlayAlarm()` | Manages arrival chimes (single/double tone) and warning buzzer sounds | Eman |  done |
 
 ---
 
@@ -42,8 +43,8 @@
 |---|---|---|---|---|
 | `elevator_app.c/h` | `Elevator_Init()`, `Elevator_Run()` | Manages the main elevator control loop, floor requests queue, and state transitions (idle, moving, doors open) | Asmaa Naguib | done    |
 | `dispatch.c/h` | `Dispatch_UpdateQueue()`, `Dispatch_GetNextFloor()` | Implements the scheduling and dispatch algorithm to route the elevator cabin efficiently based on cabin and floor calls |Menna Alla  |  DONE    |
-| `motion.c/h` | `MOT_GoTo(target)`, `MOT_Step()`, `MOT_Stop()` | Implements the trapezoidal speed profile (acceleration, slowdown, creep, and levelling zones) |    | done   |
-​| `door_fsm.c/h` |` Door_FSM_Open()`, `Door_FSM_Close()`, `Door_Run()` | Manages door automation states, dwell timing, and safety edge obstruction reversal   | MENNA |  DONE |
+| `motion.c/h` | `MOT_GoTo(target)`, `MOT_Step()`, `MOT_Stop()` | Implements the trapezoidal speed profile (acceleration, slowdown, creep, and levelling zones) |  Maryam Salah  | done  |
+​| `door_fsm.c/h` | `Door_FSM_Open()`, `Door_FSM_Close()`, `Door_Run()`| Manages door automation states, dwell timing, and safety edge obstruction reversal  | MENNA |  DONE |
 | `safety.c/h` | `SAF_Evaluate()`, `SAF_IsActive()` | Evaluates and enforces the 7-tier strict safety precedence (E-stop, over-travel, fire, overload) | MENNA    |  DONE   |
 | `faultlog.c/h` | `FLG_Append()`, `FLG_Dump()` | Manages a fixed 16-entry ring buffer in RAM to record system faults and execution snapshots | MENNA    |  DONE   |
 
