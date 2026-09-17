@@ -34,6 +34,7 @@ HDRS = LIB/STD_TYPES.h \
 	   HAL/calls165/calls165_interface.h \
 	   HAL/display/display_interface.h \
 	   HAL/door/door_interface.h \
+	   HAL/lcd_i2c/lcd_i2c.h \
 	   HAL/loadcell/loadcell_interface.h \
 	   HAL/position/position_interface.h \
 	   HAL/SevenSegment/SevenSegment_interface.h \
@@ -55,7 +56,7 @@ OBJS     := $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRCS))
 PREPROCS := $(patsubst %.c,$(BUILD_DIR)/%.i,$(SRCS))
 ASMS     := $(patsubst %.c,$(BUILD_DIR)/%.s,$(SRCS))
 
-INC_DIRS := $(sort . LIB MCAL/GPIO HAL/DIO HAL/calls165 APP/COMM APP/FAULTLOG APP/motion APP/DOOR APP/SAFETY APP/elevator APP/DISPATCH HAL/74HC165 HAL/74HC595  HAL/display HAL/position HAL/loadcell HAL/door HAL/SevenSegment  HAL/hoist MCAL/SPI MCAL/ADC MCAL/UART  MCAL/TIMER MCAL/EXTI $(dir $(SRCS)) $(dir $(HDRS)))
+INC_DIRS := $(sort . LIB MCAL/GPIO HAL/DIO HAL/calls165 HAL/lcd_i2c APP/COMM APP/FAULTLOG APP/motion APP/DOOR APP/SAFETY APP/elevator APP/DISPATCH HAL/74HC165 HAL/74HC595  HAL/display HAL/position HAL/loadcell HAL/door HAL/SevenSegment  HAL/hoist MCAL/SPI MCAL/ADC MCAL/UART  MCAL/TIMER MCAL/EXTI $(dir $(SRCS)) $(dir $(HDRS)))
 INCLUDES := $(addprefix -I,$(INC_DIRS))
 
 # Keep directory creation compatible with the Windows command shell.
