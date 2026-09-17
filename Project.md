@@ -43,7 +43,7 @@
 | `elevator_app.c/h` | `Elevator_Init()`, `Elevator_Run()` | Manages the main elevator control loop, floor requests queue, and state transitions (idle, moving, doors open) | Asmaa Naguib | done    |
 | `dispatch.c/h` | `Dispatch_UpdateQueue()`, `Dispatch_GetNextFloor()` | Implements the scheduling and dispatch algorithm to route the elevator cabin efficiently based on cabin and floor calls |Menna Alla  |  DONE    |
 | `motion.c/h` | `MOT_GoTo(target)`, `MOT_Step()`, `MOT_Stop()` | Implements the trapezoidal speed profile (acceleration, slowdown, creep, and levelling zones) |    | done   |
-​| door_fsm.c/h | Door_FSM_Open(), Door_FSM_Close(), Door_Run() | Manages door automation states, dwell timing, and safety edge obstruction reversal           | MENNA |  DONE |
+​| 'door_fsm.c/h' |' Door_FSM_Open( )', 'Door_FSM_Close( )', 'Door_Run( )' | Manages door automation states, dwell timing, and safety edge obstruction reversal   | MENNA |  DONE |
 | `safety.c/h` | `SAF_Evaluate()`, `SAF_IsActive()` | Evaluates and enforces the 7-tier strict safety precedence (E-stop, over-travel, fire, overload) | MENNA    |  DONE   |
 | `faultlog.c/h` | `FLG_Append()`, `FLG_Dump()` | Manages a fixed 16-entry ring buffer in RAM to record system faults and execution snapshots | MENNA    |  DONE   |
 
